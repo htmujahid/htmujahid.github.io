@@ -1,0 +1,113 @@
+        h1 {
+            color: black;
+            font-family: Arial,
+                sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 24.5pt;
+        }
+
+        .p,
+        p {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+            margin: 0pt;
+        }
+
+        .s1 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: italic;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+        }
+
+        .a {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: underline;
+            font-size: 10pt;
+        }
+
+        .s2 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        h2 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 11pt;
+        }
+
+        .s3 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 11pt;
+        }
+
+        h3 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 10pt;
+        }
+
+        .s4 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 7pt;
+            vertical-align: 2pt;
+        }
+
+        .s5 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+            vertical-align: -2pt;
+        }
+
+        li {
+            display: block;
+        }
+
+        #l1 {
+            padding-left: 0pt;
+        }
+
+        #l1>li:before {
+            content: "• ";
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: italic;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 6pt;
+            vertical-align: 1pt;
+        }
