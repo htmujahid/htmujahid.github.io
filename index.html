@@ -6,284 +6,292 @@
         About Me
     </title>
     <link rel="icon" href="DP.ico" sizes="96x96">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: Helvetica;
-        }
+  font-family: Helvetica;
+}
 
-        h1 {
-            text-align: center;
-        }
+h2 {
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: medium;
+  margin-left: 0.5em;
+}
 
-        h2 {
-            margin-bottom: 0;
-            font-weight: normal;
-            font-size: medium;
-            margin-left: 0.5em;
-        }
+p {
+  font-size: small;
+}
 
-        p {
-            font-size: small;
-        }
+.con {
+  font-size: small;
+}
 
-        .con {
-            font-size: small;
-        }
+nav p {
+  display: inline;
+}
 
-        div.con p {
-            display: inline;
-        }
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: black;
+}
 
-        .tm {
-            text-align: center;
-        }
+div.edu>div>p.ins {
+  display: inline;
+  font-size: medium;
+  font-weight: bold;
+  padding-left: 1em;
+}
 
-        .lg {
-            text-align: center;
-        }
+div.edu>div>p.addr {
+  display: inline;
+}
 
-        a:link,
-        a:visited,
-        a:hover,
-        a:active {
-            color: black;
-        }
+div.edu>div>p.deg,
+div.edu>div>p.year {
+  padding-left: 2em;
+  font-style: italic;
+}
 
-        div.edu>div>p.ins {
-            display: inline;
-            font-size: medium;
-            font-weight: bold;
-            padding-left: 1em;
-        }
+div.pro>div>p {
+  font-weight: bold;
+  display: inline;
+}
 
-        div.edu>div>p.addr {
-            display: inline;
-        }
+div.pro>div>p.proname {
+  padding-left: 1em;
+  font-weight: bold;
+}
 
-        div.edu>div>p.deg {
-            padding-left: 2em;
-            font-style: italic;
+div.pro>div>p.protool {
+  font-style: italic;
+}
 
-        }
+div.pro>div>p.dur {
+  font-weight: normal;
+}
 
-        div.edu>div>p.year {
-            padding-left: 2em;
-            font-style: italic;
-        }
+div.pro>div>ul {
+  font-size: small;
+}
 
-        div.pro>div>p {
-            font-weight: bold;
-            display: inline;
-        }
+div.prog>div>p {
+  display: inline;
+  font-size: small;
+}
 
-        div.pro>div>p.proname {
-            padding-left: 1em;
-            font-weight: bold;
-        }
+div.prog>div>p.head {
+  padding-left: 1em;
+  font-weight: bold;
+}
 
-        div.pro>div>p.protool {
-            font-style: italic;
-        }
+div.com>div>p {
+  display: inline;
+  font-size: small;
+}
 
-        div.pro>div>p.dur {
-            font-weight: normal;
-        }
+div.com>div>p.head {
+  padding-left: 1em;
+  font-weight: bold;
+}
 
-        div.pro>div>ul {
-            font-size: small;
-        }
+div.other>div>p {
+  display: inline;
+  font-size: small;
+}
 
-        div.prog>div>p {
-            display: inline;
-            font-size: small;
-        }
-
-        div.prog>div>p.head {
-            padding-left: 1em;
-            font-weight: bold;
-        }
-
-        div.com>div>p {
-            display: inline;
-            font-size: small;
-        }
-
-        div.com>div>p.head {
-            padding-left: 1em;
-            font-weight: bold;
-        }
-
-        div.other>div>p {
-            display: inline;
-            font-size: small;
-        }
-
-        div.other>div>p.head {
-            padding-left: 1em;
-            font-weight: bold;
-        }
+div.other>div>p.head {
+  padding-left: 1em;
+  font-weight: bold;
+}
+.centered-text{
+  text-align: center;
+}
+nav li{
+  margin: 0;
+}
     </style>
 </head>
 
 <body>
-    <h1>Talha Mujahid</h1>
-    <div class="con">
-        <div class="tm">
-            <a href="tel:+923000000000" target="_blank">+923#########</a>
-            <p>|</p>
-            <a href="mailto:htmujahid@gmail.com" target="_blank">htmujahid@gmail.com</a>
-        </div>
-        <div class="lg">
-            <a href="https://linkedin.com/in/htmujahid" target="_blank">linkedin.com/in/htmujahid</a>
-            <p>|</p>
-            <a href="https://github.com/htmujahid" target="_blank">github.com/htmujahid</a>
-        </div>
-    </div>
-    <h2>Education</h2>
-    <hr>
-    <div class="edu">
-        <div>
-            <p class="ins">National University of Science and Technology</h3>
-            <p class="addr">H12, Islamabad</p>
-            <p class="deg">Bachelor in Engineering Software Engineering(3.3/4)</p>
-            <p class="year">Sep 2019 – Aug 2023</p><br>
-        </div>
-        <div>
-            <p class="ins">Punjab College</h3>
-            <p class="addr">Raiwind, Lahore</p>
-            <p class="deg">Inter in Computer Science with Physics and Mathematics(90%)</p>
-            <p class="year">Apr 2017 – Mar 2019</p>
-        </div>
-    </div>
-    <h2>Projects</h2>
-    <hr>
-    <div class="pro">
-        <div>
-            <p class="proname">AdHeap</p>
-            <p>|</p>
-            <p class="protool">React JS, Node JS, MySQL</p>
-            <p class="dur">Oct 2020 – Jan 2021</p>
-            <ul>
-                <li>AdHeap is basically an ad Agency website. We allow our clients to submit their ads to us and pay us
-                    for displaying their ads to different websites thus providing organic reach of their
-                    products/services to targeted audience. We pay to several websites and place the ads on these
-                    websites and reach targeted users by using Ip addresses of customers visiting the websites. The
-                    targeted audience of this application is any company or individual who wants to promote his
-                    business, product or services online. </li>
-                <li>Used React JS, HTML, CSS for frontend design</li>
-                <li>Node JS is used for making connection between frontend and database</li>
-                <li>Used MySQL for storing data</li>
-            </ul>
-        </div>
-        <div>
-            <p class="proname">ShuttleSpy</p>
-            <p>|</p>
-            <p class="protool">Java, XML, Firebase</p>
-            <p class="dur">Feb 2020 – Jun 2020</p>
-            <ul>
-                <li>Developed an android app using android studio for tracking the shuttle service and connect passenger
-                    and driver remotely</li>
-                <li>Used Java for backend logic</li>
-                <li>XML is used for frontend</li>
-                <li>Used Firebase as realtime database for meeting the condition of live tracking</li>
-            </ul>
-        </div>
-        <div>
-            <p class="proname">Cholab</p>
-            <p>|</p>
-            <p class="protool">Flask, SQL Alchemy , HTML/CSS, JavaScript, Tkinter(Python)</p>
-            <p class="dur">Sep 2019 – Jan 2020</p>
-            <ul>
-                <li>Developed a website for Providing the accurate physical and chemical properties of Chemistry
-                    Elements</li>
-                <li>HTML/CSS and JavaScript is used for Frontend</li>
-                <li>SQL Alchemy database is used for storing the information of Elements</li>
-                <li>Python framework Flask is used for making a connection between frontend and database</li>
-                <li>Offline version(Desktop) of this website is also made up using Python GUI Framework named Tkinter
-                </li>
-            </ul>
-        </div>
-    </div>
-    <h2>Programming Knowledge</h2>
-    <hr>
-    <div class="prog">
-        <div>
-            <p class="head">Languages</p>
-            <p>: </p>
-            <p>Java, Python, C/C++, SQL, JavaScript, HTML/CSS, Kotlin </p>
-        </div>
-        <div>
-            <p class="head">Frameworks</p>
-            <p>: </p>
-            <p>React, Node.js, Flask, WordPress </p>
-        </div>
-        <div>
-            <p class="head">Libraries</p>
-            <p>: </p>
-            <p>Tkinter, NumPy, Matplotlib, JavaFX</p>
-        </div>
-        <div>
-            <p class="head">Developer Tools</p>
-            <p>: </p>
-            <p>Git, VS Code, Visual Studio, PyCharm, Eclipse, Android Studio, MySQL, XAMP, CodeBlocks, Dev C++, Anaconda
-            </p>
-        </div>
-    </div>
-    <h2>Computer Skills</h2>
-    <hr>
-    <div class="com">
-        <div>
-            <p class="head">Typing</p>
-            <p>: </p>
-            <p>60WPM</p>
-        </div>
-        <div>
-            <p class="head">Software Skills</p>
-            <p>: </p>
-            <p>LATEX, AutoCAD, LTspice, ModleSim </p>
-        </div>
-        <div>
-            <p class="head">MS Office Tools</p>
-            <p>: </p>
-            <p> MS Word, MS Excel, MS PowerPoint, MS Access</p>
-        </div>
-        <div>
-            <p class="head">Operating System</p>
-            <p>: </p>
-            <p>Windows(CMD, GUI), Linux(Terminal, GUI)</p>
-        </div>
-        <div>
-            <p class="head">Networking Skills</p>
-            <p>: </p>
-            <p>Packet Tracer, TCL Script, NS2, Socket Programming</p>
-        </div>
-        <div>
-            <p class="head">Social Media</p>
-            <p>: </p>
-            <p>Twitter, Facebook, Instagram</p>
-        </div>
-        <div>
-            <p class="head">Advance Computer Skills</p>
-            <p>: </p>
-            <p>Web Development, Data Structures, Android App Development, Desktop App Development</p>
-        </div>
-    </div>
-    <h2>Other Skills</h2>
-    <hr>
-    <div class="com">
-        <div>
-            <p class="head">Hobbies & Skills</p>
-            <p>: </p>
-            <p>Book Reading, Article Writing, Blogging, Coding</p>
-        </div>
-        <div>
-            <p class="head">Languages</p>
-            <p>: </p>
-            <p>English, Urdu, Punjabi</p>
-        </div>
-    </div>
-    <hr>
-    <p style="text-align: center;">The END</p>
+    <header>
+        <h1 class="centered-text">Talha Mujahid</h1>
+        <nav class="con">
+                <div class="centered-text">
+                    <a href="tel:+923126588344" target="_blank">+923126588344</a>
+                    <p>|</p>
+                    <a href="mailto:htmujahid@gmail.com" target="_blank">htmujahid@gmail.com</a>
+                </div>
+                <div class="centered-text">
+                    <a href="https://linkedin.com/in/htmujahid" target="_blank">linkedin.com/in/htmujahid</a>
+                    <p>|</p>
+                    <a href="https://github.com/htmujahid" target="_blank">github.com/htmujahid</a>
+                </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Education</h2>
+            <hr>
+            <div class="edu">
+                <div>
+                    <p class="ins">National University of Science and Technology</h3>
+                    <p class="addr">H12, Islamabad</p>
+                    <p class="deg">Bachelor in Engineering Software Engineering(3.2/4)</p>
+                    <p class="year">Sep 2019 – Aug 2023</p><br>
+                </div>
+                <div>
+                    <p class="ins">Punjab College</h3>
+                    <p class="addr">Raiwind, Lahore</p>
+                    <p class="deg">Inter in Computer Science with Physics and Mathematics(90%)</p>
+                    <p class="year">Apr 2017 – Mar 2019</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <hr>
+            <div class="pro">
+                <div>
+                    <p class="proname">AdHeap</p>
+                    <p>|</p>
+                    <p class="protool">React JS, Node JS, MySQL</p>
+                    <p class="dur">Oct 2020 – Jan 2021</p>
+                    <ul>
+                        <li>AdHeap is basically an ad Agency website. We allow our clients to submit their ads to us and pay us
+                            for displaying their ads to different websites thus providing organic reach of their
+                            products/services to targeted audience. We pay to several websites and place the ads on these
+                            websites and reach targeted users by using Ip addresses of customers visiting the websites. The
+                            targeted audience of this application is any company or individual who wants to promote his
+                            business, product or services online. </li>
+                        <li>Used React JS, HTML, CSS for frontend design</li>
+                        <li>Node JS is used for making connection between frontend and database</li>
+                        <li>Used MySQL for storing data</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="proname">ShuttleSpy</p>
+                    <p>|</p>
+                    <p class="protool">Java, XML, Firebase</p>
+                    <p class="dur">Feb 2020 – Jun 2020</p>
+                    <ul>
+                        <li>Developed an android app using android studio for tracking the shuttle service and connect passenger
+                            and driver remotely</li>
+                        <li>Used Java for backend logic</li>
+                        <li>XML is used for frontend</li>
+                        <li>Used Firebase as realtime database for meeting the condition of live tracking</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="proname">Cholab</p>
+                    <p>|</p>
+                    <p class="protool">Flask, SQL Alchemy , HTML/CSS, JavaScript, Tkinter(Python)</p>
+                    <p class="dur">Sep 2019 – Jan 2020</p>
+                    <ul>
+                        <li>Developed a website for Providing the accurate physical and chemical properties of Chemistry
+                            Elements</li>
+                        <li>HTML/CSS and JavaScript is used for Frontend</li>
+                        <li>SQL Alchemy database is used for storing the information of Elements</li>
+                        <li>Python framework Flask is used for making a connection between frontend and database</li>
+                        <li>Offline version(Desktop) of this website is also made up using Python GUI Framework named Tkinter
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Development Knowledge</h2>
+            <hr>
+            <div class="prog">
+                <div>
+                    <p class="head">Programming Languages</p>
+                    <p>: </p>
+                    <p>Java, Python, C/C++</p>
+                </div>
+                <div>
+                    <p class="head">Web Development</p>
+                    <p>: </p>
+                    <p>HTML, CSS(Bootstrap, Tailwind, Foundation),JavaScript(React), WordPress</p>
+                </div>
+                <div>
+                    <p class="head">Desktop App Development</p>
+                    <p>: </p>
+                    <p>Tkinter, JavaFX</p>
+                </div>
+                <div>
+                    <p class="head">Developer Tools</p>
+                    <p>: </p>
+                    <p>Git, Android Studio, MySQL, XAMP</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Computer Skills</h2>
+            <hr>
+            <div class="com">
+                <div>
+                    <p class="head">Typing</p>
+                    <p>: </p>
+                    <p>60WPM</p>
+                </div>
+                <div>
+                    <p class="head">Software Skills</p>
+                    <p>: </p>
+                    <p>LATEX, AutoCAD, LTspice, ModleSim </p>
+                </div>
+                <div>
+                    <p class="head">MS Office Tools</p>
+                    <p>: </p>
+                    <p> MS Word, MS Excel, MS PowerPoint, MS Access</p>
+                </div>
+                <div>
+                    <p class="head">Operating System</p>
+                    <p>: </p>
+                    <p>Windows(CMD, GUI), Linux(Terminal, GUI)</p>
+                </div>
+                <div>
+                    <p class="head">Networking Skills</p>
+                    <p>: </p>
+                    <p>Packet Tracer, TCL Script, Socket Programming</p>
+                </div>
+                <div>
+                    <p class="head">Database Skills</p>
+                    <p>: </p>
+                    <p>SQL, Firebase, Json, SQLAlchemy</p>
+                </div>
+                <!-- <div>
+                    <p class="head">Social Media</p>
+                    <p>: </p>
+                    <p>Twitter, Facebook, Instagram</p>
+                </div> -->
+                <div>
+                    <p class="head">Advance Computer Skills</p>
+                    <p>: </p>
+                    <p>Data Structures, Machine Learning</p>
+                </div>
+            </div>            
+        </section>
+        <section>
+            <h2>Other Skills</h2>
+            <hr>
+            <div class="com">
+                <div>
+                    <p class="head">Hobbies & Skills</p>
+                    <p>: </p>
+                    <p>Book Reading, Blogging, Coding</p>
+                </div>
+                <div>
+                    <p class="head">Languages</p>
+                    <p>: </p>
+                    <p>English, Urdu, Punjabi</p>
+                </div>
+            </div>
+            <hr>
+            <p style="text-align: center;">The END</p>
+        </section>
+    </main>
 </body>
 
 </html>
