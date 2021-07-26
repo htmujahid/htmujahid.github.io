@@ -9,109 +9,116 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-  font-family: Helvetica;
-}
+          font-family: Helvetica;
+        }
 
-h2 {
-  margin-bottom: 0;
-  font-weight: normal;
-  font-size: medium;
-  margin-left: 0.5em;
-}
+        h2 {
+          margin-bottom: 0;
+          font-weight: normal;
+          font-size: medium;
+          margin-left: 0.5em;
+        }
 
-p {
-  font-size: small;
-}
+        p {
+          font-size: small;
+        }
 
-.con {
-  font-size: small;
-}
+        .con {
+          font-size: small;
+        }
 
-nav p {
-  display: inline;
-}
+        nav p {
+          display: inline;
+        }
 
-a:link,
-a:visited,
-a:hover,
-a:active {
-  color: black;
-}
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+          color: black;
+        }
 
-div.edu>div>p.ins {
-  display: inline;
-  font-size: medium;
-  font-weight: bold;
-  padding-left: 1em;
-}
+        div.edu>div>p.ins {
+          display: inline;
+          font-size: medium;
+          font-weight: bold;
+          padding-left: 1em;
+        }
 
-div.edu>div>p.addr {
-  display: inline;
-}
+        div.edu>div>p>span.addr {
+          float: right;
+          font-style: italic;
+          font-size: small;
+          font-weight: normal;
+        }
 
-div.edu>div>p.deg,
-div.edu>div>p.year {
-  padding-left: 2em;
-  font-style: italic;
-}
+        div.edu>div>p.deg {
+          padding-left: 2em;
+          font-style: italic;
+        }
 
-div.pro>div>p {
-  font-weight: bold;
-  display: inline;
-}
+        div.edu>div>p>span.year {
+          float: right;
+          font-style: italic;
+        }
 
-div.pro>div>p.proname {
-  padding-left: 1em;
-  font-weight: bold;
-}
+        div.pro>div>p {
+          font-weight: bold;
+          display: inline;
+        }
 
-div.pro>div>p.protool {
-  font-style: italic;
-}
+        div.pro>div>p.proname {
+          padding-left: 1em;
+          font-weight: bold;
+        }
 
-div.pro>div>p.dur {
-  font-weight: normal;
-}
+        div.pro>div>p.protool {
+          font-style: italic;
+        }
 
-div.pro>div>ul {
-  font-size: small;
-}
+        div.pro>div>p.dur {
+          font-weight: normal;
+        }
 
-div.prog>div>p {
-  display: inline;
-  font-size: small;
-}
+        div.pro>div>ul {
+          font-size: small;
+        }
 
-div.prog>div>p.head {
-  padding-left: 1em;
-  font-weight: bold;
-}
+        div.prog>div>p {
+          display: inline;
+          font-size: small;
+        }
 
-div.com>div>p {
-  display: inline;
-  font-size: small;
-}
+        div.prog>div>p.head {
+          padding-left: 1em;
+          font-weight: bold;
+        }
 
-div.com>div>p.head {
-  padding-left: 1em;
-  font-weight: bold;
-}
+        div.com>div>p {
+          display: inline;
+          font-size: small;
+        }
 
-div.other>div>p {
-  display: inline;
-  font-size: small;
-}
+        div.com>div>p.head {
+          padding-left: 1em;
+          font-weight: bold;
+        }
 
-div.other>div>p.head {
-  padding-left: 1em;
-  font-weight: bold;
-}
-.centered-text{
-  text-align: center;
-}
-nav li{
-  margin: 0;
-}
+        div.other>div>p {
+          display: inline;
+          font-size: small;
+        }
+
+        div.other>div>p.head {
+          padding-left: 1em;
+          font-weight: bold;
+        }
+        .centered-text{
+          text-align: center;
+        }
+        nav li{
+          margin: 0;
+        }
     </style>
 </head>
 
@@ -137,16 +144,14 @@ nav li{
             <hr>
             <div class="edu">
                 <div>
-                    <p class="ins">National University of Science and Technology</h3>
+                    <p class="ins">National University of Science and Technology<span class="addr">Sector H12, Islamabad</span></p>
                     <p class="addr">H12, Islamabad</p>
-                    <p class="deg">Bachelor in Engineering Software Engineering(3.2/4)</p>
-                    <p class="year">Sep 2019 – Aug 2023</p><br>
+                    <p class="deg">Bachelor in Engineering Software Engineering(3.2/4)<span class="year">Sep 2019 – Aug 2023</span></p><br>
                 </div>
                 <div>
-                    <p class="ins">Punjab College</h3>
+                    <p class="ins">Punjab College <span class="addr">Raiwind, Lahore</span></p>
                     <p class="addr">Raiwind, Lahore</p>
-                    <p class="deg">Inter in Computer Science with Physics and Mathematics(90%)</p>
-                    <p class="year">Apr 2017 – Mar 2019</p>
+                    <p class="deg">Inter in Computer Science with Physics and Mathematics(90%) <span class="year">Apr 2017 – Mar 2019</span> </p>
                 </div>
             </div>
         </section>
@@ -292,6 +297,9 @@ nav li{
             <p style="text-align: center;">The END</p>
         </section>
     </main>
+</body>
+
+</html>
 </body>
 
 </html>
