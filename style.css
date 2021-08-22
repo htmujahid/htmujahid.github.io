@@ -99,7 +99,7 @@ footer{
         display: block;
     }
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width:510px) {
     section#contact li{
         display: block;
     }
