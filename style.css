@@ -98,6 +98,32 @@ footer{
     section#contact ul{
         display: block;
     }
+
+    main section#education h3,
+    main section#projects h3{
+        margin: 0px;
+        float: none;
+        padding-left: 20px;
+    }
+    main section#education .location,
+    main section#projects .duration{
+        margin: 0px;
+        float: none;
+        padding-left: 20px;
+    }
+    main section#projects ul,
+    main section#education .program{
+        float: none;
+        padding-left: 20px;
+    }
+    main section#education .duration{
+        float: none;
+        padding-left: 20px;
+    }
+    main section#projects div{
+        display: inline-block;
+        margin-left: 20px;
+    }
 }
 @media screen and (max-width:510px) {
     section#contact li{
