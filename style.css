@@ -1,162 +1,188 @@
-body{
-    padding: 0;
-    margin: 0;
+body {
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5em;
-    background-image: url("bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-position:center;
-    background-attachment: fixed;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
-div{
-    clear: both;
+
+.container {
+    width: 720px;
+    margin: 0 auto;
 }
-.container{
-    width: 80%;
-    margin: auto;
+
+.m0 {
+    margin: 0;
 }
-header#header-1{
-    text-align: center;
-    background-color: #2b2d42;
+
+.p0 {
+    padding: 0;
+}
+
+header#header {
+    background-color: #000;
+}
+
+header#header div div {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: #333 3px solid;
+}
+
+header#header a {
+    line-height: 0;
     color: white;
-    border-bottom: #ef233c 2px solid;
-}
-header#header-1 h1{
-    margin: 0;
-    padding: 20px;
-}
-section#contact{
-    background-color: #8d99ae;
-    text-align: center;
-}
-section#contact ul{
-    padding: 0;
-    margin: 0;
-    display: inline;
-    list-style-type: none;
-}
-section#contact li{
-    margin: 0;
-    padding: 0;
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-section#contact a{
-    color: black;
     text-decoration: none;
 }
-section#contact a:hover{
-    color: red;
-    text-decoration: underline;
-}
-main section#education,
-main section#projects,
-main section#dev,
-main section#com,
-main section#other{
-    margin: 20px 0px;
-    padding: 10px;
-    background-color: #edf2f4;
-    overflow: hidden;
-    border-bottom: #edf2f4 10px solid;
-}
-main section#education h1,
-main section#projects h1{
-    margin: 0px;
-}
-main section#education h3,
-main section#projects h3{
-    margin: 0px;
-    float: left;
-}
-main section#education .location,
-main section#projects .duration{
-    margin: 0px;
-    float: right;
-}
-main section#projects ul,
-main section#education .program{
-    margin: 10px 0px;
-    float: left;
-    padding-left: 20px;
-}
-main section#education .duration{
-    margin: 10px 0px;
-    float: right;
+
+header#header img {
+    margin: 0 10px;
 }
 
+header#header h1 {
+    padding-top: 9px;
+}
 
-footer{
+section#showcase {
+    padding-top: calc(50vh - 180px);
+    padding-bottom: calc(50vh - 100px);
+}
+
+section#showcase div div {
     text-align: center;
-    padding: 1px;
-    background-color: #8d99ae;
 }
-@media screen and (max-width:950px) {
-    section#contact ul{
-        display: block;
-    }
 
-    main section#education h3,
-    main section#projects h3{
-        margin: 0px;
-        float: none;
-        padding-left: 20px;
-    }
-    main section#education .location,
-    main section#projects .duration{
-        margin: 0px;
-        float: none;
-        padding-left: 20px;
-    }
-    main section#projects ul,
-    main section#education .program{
-        float: none;
-        padding-left: 20px;
-    }
-    main section#education .duration{
-        float: none;
-        padding-left: 20px;
-    }
-    main section#projects div{
-        display: inline-block;
-        margin-left: 20px;
-    }
+section#showcase div div>img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transition: linear all 0.5s;
 }
-@media screen and (max-width:510px) {
-    section#contact li{
-        display: block;
-    }
-    .container{
-        width: 100%;
-    }
 
-    main section#education h3,
-    main section#projects h3{
-        margin: 0px;
-        float: none;
-        padding-left: 20px;
-    }
-    main section#education .location,
-    main section#projects .duration{
-        margin: 0px;
-        float: none;
-        padding-left: 20px;
-    }
-    main section#projects ul,
-    main section#education .program{
-        float: none;
-        padding-left: 20px;
-    }
-    main section#education .duration{
-        float: none;
-        padding-left: 20px;
-    }
-    main section#projects div{
-        display: inline-block;
-        margin-left: 20px;
-    }
+section#showcase div div>img:hover {
+    filter: brightness(90%);
+}
 
+section#showcase div div a {
+    margin: 5px;
+}
+
+section#showcase div div a img:hover {
+    opacity: 50%;
+}
+
+h2 {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: medium;
+    margin-left: 0.5em;
+}
+
+p {
+    font-size: small;
+}
+
+.con {
+    font-size: small;
+}
+
+nav p {
+    display: inline;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: black;
+}
+
+div.edu>div>p.ins {
+    display: inline;
+    font-size: medium;
+    font-weight: bold;
+    padding-left: 1em;
+}
+
+div.edu>div>p>span.addr {
+    float: right;
+    font-style: italic;
+    font-size: small;
+    font-weight: normal;
+}
+
+div.edu>div>p.deg {
+    padding-left: 2em;
+    font-style: italic;
+}
+
+div.edu>div>p>span.year {
+    float: right;
+    font-style: italic;
+}
+
+div.pro>div>p {
+    font-weight: bold;
+    display: inline;
+}
+
+div.pro>div>p.proname {
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+div.pro>div>p.protool {
+    font-style: italic;
+}
+
+div.pro>div>p.dur {
+    font-weight: normal;
+}
+
+div.pro>div>ul {
+    font-size: small;
+}
+
+div.prog>div>p {
+    display: inline;
+    font-size: small;
+}
+
+div.prog>div>p.head {
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+div.com>div>p {
+    display: inline;
+    font-size: small;
+}
+
+div.com>div>p.head {
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+div.other>div>p {
+    display: inline;
+    font-size: small;
+}
+
+div.other>div>p.head {
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+nav li {
+    margin: 0;
+}
+
+footer#footer {
+    text-align: center;
 }
