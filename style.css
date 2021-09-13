@@ -76,7 +76,7 @@ main section#projects,
 main section#dev,
 main section#com,
 main section#other{
-    margin: 20px 0px;
+    margin: 0px;
     padding: 10px;
     overflow: hidden;
 }
@@ -100,12 +100,12 @@ main section#projects .duration{
 }
 main section#projects ul,
 main section#education .program{
-    margin: 10px 0px;
+    margin: 0px;
     display: inline-block;
     padding-left: 20px;
 }
 main section#education .duration{
-    margin: 10px 0px;
+    margin: 0px;
     display: inline-block;
 }
 
@@ -120,26 +120,24 @@ footer{
     main section#projects h3{
         display: block;
         margin: 0px;
-        padding-left: 20px;
+        padding-left: 10px;
     }
     main section#education .location,
-    main section#projects .duration{
-        display: block;
-        margin: 0px;
-        padding-left: 20px;
-    }
-    main section#projects ul,
-    main section#education .program{
-        display: block;
-        padding-left: 20px;
-    }
+    main section#projects .duration,
+    main section#education .program,
     main section#education .duration{
         display: block;
-        padding-left: 20px;
+        margin: 0px;
+        padding-left: 25px;
     }
     main section#projects div{
-        display: inline-block;
-        margin-left: 20px;
+        display: block;
+        margin-left: 0px;
+    }
+    main section#projects ul{
+        padding-left: 40px;
+        display: block;
+        margin-left: 0px;
     }
 }
 @media screen and (max-width:510px) {
@@ -148,31 +146,6 @@ footer{
         width: 100%;
     }
 
-    main section#education h3,
-    main section#projects h3{
-        margin: 0px;
-        float: none;
-        padding-left: 20px;
-    }
-    main section#education .location,
-    main section#projects .duration{
-        margin: 0px;
-        float: none;
-        padding-left: 20px;
-    }
-    main section#projects ul,
-    main section#education .program{
-        float: none;
-        padding-left: 20px;
-    }
-    main section#education .duration{
-        float: none;
-        padding-left: 20px;
-    }
-    main section#projects div{
-        display: inline-block;
-        margin-left: 20px;
-    }
-
+    
 }
 
