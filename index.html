@@ -8,169 +8,201 @@
     <title>About Me</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="DP.ico" type="image/x-icon">
+
 </head>
 
 <body>
-    <header id="header-1">
+    <header id="header" class="">
         <div class="container">
-            <div class="name">
-                <h1>Talha Mujahid</h1>
+            <div>
+                <a href="#" class="">
+                    <img src="htm.png" alt="" class="m0">
+                </a>
+                <a href="#" class="">
+                    <h1 class="m0">Talha Mujahid</h1>
+                </a>
             </div>
         </div>
     </header>
-    <section id="contact">
+    <main id="main">
+        <section id="showcase">
+            <div>
+                <div>
+                    <img src="images.png">
+                </div>
+                <div>
+                    <a href="tel:+923126588344" target="_blank">
+                        <img src="phone.png " width="20px" alt=" ">
+                    </a>
+                    <a href="mailto:htmujahid@gmail.com" target="_blank">
+                        <img src="gmail.png " width="20px" alt=" ">
+                    </a>
+                    <a href="https://www.github.com/htmujahid" target="_blank">
+                        <img src="github.png " width="20px" alt=" ">
+                    </a>
+                    <a href="https://www.linkedin.com/in/htmujahid/" target="_blank">
+                        <img src="linkedin.png " width="20px" alt=" ">
+                    </a>
+                </div>
+            </div>
+        </section>
         <div class="container">
-            <ul>
-                <li><a href="tel:+920000000000" target="_blank">+92##########</a></li>
-                <li><a href="mailto:htmujahid@gmail.com" target="_blank">htmujahid@gamil.com</a></li>
-            </ul>
-            <ul>
-                <li><a href="http://www.linkedin.com/in/htmujahid" target="_blank">linkedin.com/in/htmujahid</a></li>
-                <li><a href="http://www.github.com/htmujahid" target="_blank">github.com/htmujahid</a></li>
-            </ul>
-        </div>
-    </section>
-    <main>
-        <div class="container">
+
             <section id="education">
                 <h2>Education</h2>
                 <hr>
-                <div>
-                <article class="edu">
+                <div class="edu">
                     <div>
-                        <h3>National University of Science and Technology</h3>
-                        <p class="location">H-12, Islamabad</p>
+                        <p class="ins">National University of Science and Technology<span class="addr">Sector H12, Islamabad</span></p>
+                        <p class="deg">Bachelor in Engineering Software Engineering(3.2/4)<span class="year">Sep 2019 – Aug 2023</span></p><br>
                     </div>
                     <div>
-                        <p class="program">Bachelor in Engineering Software Engineering (3.2/4)</p>
-                        <p class="duration">2019-2023</p>
+                        <p class="ins">Punjab College <span class="addr">Raiwind, Lahore</span></p>
+                        <p class="deg">Inter in Computer Science with Physics and Mathematics(90%) <span class="year">Apr 2017 – Mar 2019</span> </p>
                     </div>
-                </article>
                 </div>
-                <div>
-                <article class="edu">
-                    <div>
-                        <h3>Punjab College</h3>
-                        <p class="location">Raiwind, Lahore</p>
-                    </div>
-                    <div>
-                        <p class="program">Inter in Computer Science (90%)</p>
-                        <p class="duration">2017-2019</p>
-                    </div>
-                </article>
-                </div>
-                <br>
             </section>
-        </div>
-        <div class="container">
             <section id="projects">
                 <h2>Projects</h2>
                 <hr>
-                <div>
-                <article class="pro">
-                    <h3>Adheap | <i>JS, Node JS, MySQL</i></h3>
-                    <p class="duration">Oct 2020 - Jan 2021</p>
+                <div class="pro">
                     <div>
+                        <p class="proname">AdHeap</p>
+                        <p>|</p>
+                        <p class="protool">React JS, Node JS, MySQL</p>
+                        <p class="dur">Oct 2020 – Jan 2021</p>
                         <ul>
-                            <li>AdHeap is basically an ad Agency website. We allow our clients to submit their ads to us
-                                and pay us for displaying their ads to different websites thus providing organic reach
-                                of their products/services to targeted audience. We pay to several websites and place
-                                the ads on these websites and reach targeted users by using Ip addresses of customers
-                                visiting the websites. The targeted audience of this application is any company or
-                                individual who wants to promote his business, product or services online.</li>
+                            <li>AdHeap is basically an ad Agency website. We allow our clients to submit their ads to us and pay us for displaying their ads to different websites thus providing organic reach of their products/services to targeted audience.
+                                We pay to several websites and place the ads on these websites and reach targeted users by using Ip addresses of customers visiting the websites. The targeted audience of this application is any company or individual who
+                                wants to promote his business, product or services online. </li>
                             <li>Used React JS, HTML, CSS for frontend design</li>
                             <li>Node JS is used for making connection between frontend and database</li>
                             <li>Used MySQL for storing data</li>
                         </ul>
                     </div>
-                </article>
-                </div>
-                <br>
-                <div>
-                <article class="pro">
-                    <h3>Shuttle Spy | <i>Java, XML, Firebase</i></h3>
-                    <p class="duration">Feb 2020 - Jun 2020</p>
                     <div>
+                        <p class="proname">ShuttleSpy</p>
+                        <p>|</p>
+                        <p class="protool">Java, XML, Firebase</p>
+                        <p class="dur">Feb 2020 – Jun 2020</p>
                         <ul>
-                            <li>Developed an android app using android studio for tracking the shuttle service and
-                                connect
-                                passenger and driver remotely</li>
+                            <li>Developed an android app using android studio for tracking the shuttle service and connect passenger and driver remotely</li>
                             <li>Used Java for backend logic</li>
                             <li>XML is used for frontend</li>
                             <li>Used Firebase as realtime database for meeting the condition of live tracking</li>
                         </ul>
                     </div>
-                </article>
-                </div>
-                <br>
-                <div>
-                <article class="pro">
-                    <h3>Cholab | <i>Flask, SQL Alchemy , HTML/CSS, JavaScript, Tkinter(Python)</i></h3>
-                    <p class="duration">Sep 2020 - Jan 2020</p>
                     <div>
+                        <p class="proname">Cholab</p>
+                        <p>|</p>
+                        <p class="protool">Flask, SQL Alchemy , HTML/CSS, JavaScript, Tkinter(Python)</p>
+                        <p class="dur">Sep 2019 – Jan 2020</p>
                         <ul>
-                            <li>Developed a website for Providing the accurate physical and chemical properties of
-                                Chemistry
-                                Elements</li>
+                            <li>Developed a website for Providing the accurate physical and chemical properties of Chemistry Elements
+                            </li>
                             <li>HTML/CSS and JavaScript is used for Frontend</li>
                             <li>SQL Alchemy database is used for storing the information of Elements</li>
-                            <li>Python framework Flask is used for making a connection between frontend and database
+                            <li>Python framework Flask is used for making a connection between frontend and database</li>
+                            <li>Offline version(Desktop) of this website is also made up using Python GUI Framework named Tkinter
                             </li>
-                            <li>Offline version(Desktop) of this website is also made up using Python GUI Framework
-                                named
-                                Tkinter</li>
                         </ul>
                     </div>
-                </article>
                 </div>
             </section>
-        </div>
-        <div class="container">
-            <section id="dev">
+            <section id="development-knowledge">
                 <h2>Development Knowledge</h2>
                 <hr>
-                <div>
-                    <ul>
-                        <li><strong>Programming Knowledge:</strong> Java, Python, C/C++</li>
-                        <li><strong>Web Development:</strong> HTML, CSS(Bootstrap, Tailwind, Foundation),JavaScript(React), WordPress</li>
-                        <li><strong>Desktop App Development:</strong> Tkinter, JavaFX</li>
-                        <li><strong>Database Skills:</strong> SQL, Firebase, Json, SQLAlchemy</li>
-                        <li><strong>Developer Tools:</strong> Git, Android Studio, MySQL, XAMP</li>
-                    </ul>
+                <div class="prog">
+                    <div>
+                        <p class="head">Programming Languages</p>
+                        <p>: </p>
+                        <p>Java, Python, C/C++</p>
+                    </div>
+                    <div>
+                        <p class="head">Web Development</p>
+                        <p>: </p>
+                        <p>HTML, CSS(Bootstrap, Tailwind, Foundation),JavaScript(React), WordPress</p>
+                    </div>
+                    <div>
+                        <p class="head">Desktop App Development</p>
+                        <p>: </p>
+                        <p>Tkinter, JavaFX</p>
+                    </div>
+                    <div>
+                        <p class="head">Developer Tools</p>
+                        <p>: </p>
+                        <p>Git, Android Studio, MySQL, XAMP</p>
+                    </div>
                 </div>
             </section>
-        </div>
-        <div class="container">
-            <section id="com">
+            <section id="computer-skills">
                 <h2>Computer Skills</h2>
                 <hr>
-                <div>
-                    <ul>
-                        <li><strong>Typing:</strong> 60WPM</li>
-                        <li><strong>Software Skills:</strong> LATEX, AutoCad, LTSpice, ModleSim</li>
-                        <li><Strong>MS Office Tools:</Strong> MS Word, MS Excel, MS PowerPoint, MS Access</li>
-                        <li><strong>Operating System: </strong> Windows(CMD, GUI), Linux(Terminal, GUI)</li>
-                        <li><strong>Neteworking Skills: </strong> Packet Tracer, TCL Script, Socket Programming</li>
-                        <li><strong>Advance Computer Skills: </strong>Data Structures, Machine Learning</li>
-                    </ul>
+                <div class="com">
+                    <div>
+                        <p class="head">Typing</p>
+                        <p>: </p>
+                        <p>60WPM</p>
+                    </div>
+                    <div>
+                        <p class="head">Software Skills</p>
+                        <p>: </p>
+                        <p>LATEX, AutoCAD, LTspice, ModleSim </p>
+                    </div>
+                    <div>
+                        <p class="head">MS Office Tools</p>
+                        <p>: </p>
+                        <p> MS Word, MS Excel, MS PowerPoint, MS Access</p>
+                    </div>
+                    <div>
+                        <p class="head">Operating System</p>
+                        <p>: </p>
+                        <p>Windows(CMD, GUI), Linux(Terminal, GUI)</p>
+                    </div>
+                    <div>
+                        <p class="head">Networking Skills</p>
+                        <p>: </p>
+                        <p>Packet Tracer, TCL Script, Socket Programming</p>
+                    </div>
+                    <div>
+                        <p class="head">Database Skills</p>
+                        <p>: </p>
+                        <p>SQL, Firebase, Json, SQLAlchemy</p>
+                    </div>
+                    <!-- <div>
+                            <p class="head">Social Media</p>
+                            <p>: </p>
+                            <p>Twitter, Facebook, Instagram</p>
+                        </div> -->
+                    <div>
+                        <p class="head">Advance Computer Skills</p>
+                        <p>: </p>
+                        <p>Data Structures, Machine Learning</p>
+                    </div>
                 </div>
             </section>
-        </div>
-        <div class="container">
-            <section id="other">
+            <section id="other-skills">
                 <h2>Other Skills</h2>
                 <hr>
-                <div>
-                    <ul>
-                        <li><strong>Hobbies & Skills:</strong> Book Reading, Blogging, Codding</li>
-                        <li><strong>Languages:</strong>Urdu, English, Punjabi</li>
-                    </ul>
+                <div class="com">
+                    <div>
+                        <p class="head">Hobbies & Skills</p>
+                        <p>: </p>
+                        <p>Book Reading, Blogging, Coding</p>
+                    </div>
+                    <div>
+                        <p class="head">Languages</p>
+                        <p>: </p>
+                        <p>English, Urdu, Punjabi</p>
+                    </div>
                 </div>
+                <hr>
             </section>
-        </div>
+
     </main>
-    <footer>
-        <p>Copyright &copy; 2021 All Rights Reserved</p>
+    </div>
+    <footer id="footer">
+        <p>Copyright &copy; 2021</p>
     </footer>
 </body>
 
