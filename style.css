@@ -4,11 +4,10 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 .container {
-    width: 720px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -72,117 +71,108 @@ section#showcase div div a {
 section#showcase div div a img:hover {
     opacity: 50%;
 }
+main section#education,
+main section#projects,
+main section#dev,
+main section#com,
+main section#other{
+    margin: 20px 0px;
+    padding: 10px;
+    overflow: hidden;
+}
+main section#education h2,
+main section#projects h2,
+main section#dev h2,
+main section#com h2,
+main section#other h2{
+    margin: 0px;
+}
+main section#education h3,
+main section#projects h3{
+    margin: 0px;
+    display: inline-block;
 
-h2 {
-    margin-bottom: 0;
-    font-weight: normal;
-    font-size: medium;
-    margin-left: 0.5em;
+}
+main section#education .location,
+main section#projects .duration{
+    margin: 0px;
+    display: inline-block;
+}
+main section#projects ul,
+main section#education .program{
+    margin: 10px 0px;
+    display: inline-block;
+    padding-left: 20px;
+}
+main section#education .duration{
+    margin: 10px 0px;
+    display: inline-block;
 }
 
-p {
-    font-size: small;
-}
 
-.con {
-    font-size: small;
-}
-
-nav p {
-    display: inline;
-}
-
-a:link,
-a:visited,
-a:hover,
-a:active {
-    color: black;
-}
-
-div.edu>div>p.ins {
-    display: inline;
-    font-size: medium;
-    font-weight: bold;
-    padding-left: 1em;
-}
-
-div.edu>div>p>span.addr {
-    float: right;
-    font-style: italic;
-    font-size: small;
-    font-weight: normal;
-}
-
-div.edu>div>p.deg {
-    padding-left: 2em;
-    font-style: italic;
-}
-
-div.edu>div>p>span.year {
-    float: right;
-    font-style: italic;
-}
-
-div.pro>div>p {
-    font-weight: bold;
-    display: inline;
-}
-
-div.pro>div>p.proname {
-    padding-left: 1em;
-    font-weight: bold;
-}
-
-div.pro>div>p.protool {
-    font-style: italic;
-}
-
-div.pro>div>p.dur {
-    font-weight: normal;
-}
-
-div.pro>div>ul {
-    font-size: small;
-}
-
-div.prog>div>p {
-    display: inline;
-    font-size: small;
-}
-
-div.prog>div>p.head {
-    padding-left: 1em;
-    font-weight: bold;
-}
-
-div.com>div>p {
-    display: inline;
-    font-size: small;
-}
-
-div.com>div>p.head {
-    padding-left: 1em;
-    font-weight: bold;
-}
-
-div.other>div>p {
-    display: inline;
-    font-size: small;
-}
-
-div.other>div>p.head {
-    padding-left: 1em;
-    font-weight: bold;
-}
-
-.centered-text {
+footer{
     text-align: center;
+    padding: 1px;
+}
+@media screen and (max-width:950px) {
+  
+    main section#education h3,
+    main section#projects h3{
+        display: block;
+        margin: 0px;
+        padding-left: 20px;
+    }
+    main section#education .location,
+    main section#projects .duration{
+        display: block;
+        margin: 0px;
+        padding-left: 20px;
+    }
+    main section#projects ul,
+    main section#education .program{
+        display: block;
+        padding-left: 20px;
+    }
+    main section#education .duration{
+        display: block;
+        padding-left: 20px;
+    }
+    main section#projects div{
+        display: inline-block;
+        margin-left: 20px;
+    }
+}
+@media screen and (max-width:510px) {
+ 
+    .container{
+        width: 100%;
+    }
+
+    main section#education h3,
+    main section#projects h3{
+        margin: 0px;
+        float: none;
+        padding-left: 20px;
+    }
+    main section#education .location,
+    main section#projects .duration{
+        margin: 0px;
+        float: none;
+        padding-left: 20px;
+    }
+    main section#projects ul,
+    main section#education .program{
+        float: none;
+        padding-left: 20px;
+    }
+    main section#education .duration{
+        float: none;
+        padding-left: 20px;
+    }
+    main section#projects div{
+        display: inline-block;
+        margin-left: 20px;
+    }
+
 }
 
-nav li {
-    margin: 0;
-}
-
-footer#footer {
-    text-align: center;
-}
