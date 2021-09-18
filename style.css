@@ -54,7 +54,7 @@ section#showcase div div {
 }
 
 section#showcase div div>img {
-    width: 200px;
+    width: auto;
     height: 200px;
     position: relative;
     transition: linear all 0.5s;
