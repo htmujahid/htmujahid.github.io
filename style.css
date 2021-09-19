@@ -61,7 +61,7 @@ section#showcase div div>img {
 }
 
 section#showcase div div>img:hover {
-    filter: brightness(90%);
+    filter: brightness(60%);
 }
 
 section#showcase div div a {
