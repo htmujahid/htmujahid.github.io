@@ -6,8 +6,12 @@ body {
     padding: 0;
 }
 
+a {
+    color: black;
+}
+
 .container {
-    max-width: 720px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
@@ -19,20 +23,25 @@ body {
     padding: 0;
 }
 
-header#header {
-    background-color: #000;
+/* header#header {
+    background-color: #000; 
+} */
+header#header > div > div{
+    border-bottom: #333 3px solid;
 }
 
 header#header div div {
     display: flex;
     align-items: center;
     padding: 10px 0;
-    border-bottom: #333 3px solid;
+    overflow:visible;
 }
-
+header#header div#branding{
+    flex: 1;
+}
 header#header a {
     line-height: 0;
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -44,33 +53,11 @@ header#header h1 {
     padding-top: 0px;
 }
 
-section#showcase {
-    padding-top: calc(50vh - 180px);
-    padding-bottom: calc(50vh - 100px);
-}
-
-section#showcase div div {
-    text-align: center;
-}
-
-section#showcase div div>img {
-    width: auto;
-    height: 200px;
-    position: relative;
-    transition: linear all 0.5s;
-}
-
-section#showcase div div>img:hover {
-    filter: brightness(60%);
-}
-
-section#showcase div div a {
-    margin: 5px;
-}
-
-section#showcase div div a img:hover {
+header#header div#social-icons a img:hover {
     opacity: 50%;
 }
+
+main section#info,
 main section#education,
 main section#projects,
 main section#dev,
@@ -80,6 +67,7 @@ main section#other{
     padding: 10px;
     overflow: hidden;
 }
+main section#info h2,
 main section#education h2,
 main section#projects h2,
 main section#dev h2,
@@ -114,6 +102,15 @@ footer{
     text-align: center;
     padding: 1px;
 }
+
+@media screen and (max-width:1350px) {
+ 
+    .container{
+        width: 80%;
+    }
+
+}
+
 @media screen and (max-width:950px) {
   
     main section#education h3,
@@ -140,12 +137,21 @@ footer{
         margin-left: 0px;
     }
 }
+
+    
+@media screen and (max-width:600px) {
+ 
+    header#header > div > div {
+        flex-direction: column;
+    }
+    
+}
+
 @media screen and (max-width:510px) {
  
     .container{
         width: 100%;
     }
 
-    
 }
 
