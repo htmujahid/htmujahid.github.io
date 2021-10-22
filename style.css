@@ -47,6 +47,7 @@ header#header a {
 
 header#header img {
     margin: 0 10px;
+    transition: 1s;
 }
 
 header#header h1 {
