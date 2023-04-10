@@ -39,14 +39,14 @@ function projectTemplate(project, index) {
                 <div class="text-2xl lg:text-3xl font-bold pb-3">${
                     project.name
                 }</div>
-                <div class="text-xl lg:text-2xl text-gray-500 font-medium pb-4">
+                <div class="text-xl lg:text-2xl text-gray-800 font-medium pb-4">
                     ${project.description}
                 </div>
                 <div class="flex flex-wrap gap-2 pb-3">
                     ${project.technologies
                         .map(
                             (technology) => `
-                        <div class="bg-gray-300 text-gray-500 text-sm font-medium py-1 px-3 rounded-3xl">
+                        <div class="bg-gray-300 text-gray-800 text-sm font-medium py-1 px-3 rounded-3xl">
                             ${technology}
                         </div>
                     `
