@@ -23,12 +23,12 @@ async function renderTopProjects(num = 4) {
 
 function projectTemplate(project, index) {
     const projectElement = document.createElement("div");
-    projectElement.classList.add("mx-0");
+    projectElement.classList.add("mx-auto");
     if (index % 2 === 1) projectElement.classList.add("lg:pt-20");
     projectElement.innerHTML = `
             <div class="pb-8">
                 <div
-                    class="min-w-[320px] max-w-[450px] h-[255px]"
+                    class="min-w-[320px] max-w-[450px] sm:h-[255px]"
                 >
                     <img src="${
                         project.image
@@ -36,8 +36,10 @@ function projectTemplate(project, index) {
                 </div>
             </div>
             <div class="max-w-[450px]">
-                <div class="text-3xl font-bold pb-3">${project.name}</div>
-                <div class="text-2xl text-gray-500 font-medium pb-4">
+                <div class="text-2xl lg:text-3xl font-bold pb-3">${
+                    project.name
+                }</div>
+                <div class="text-xl lg:text-2xl text-gray-500 font-medium pb-4">
                     ${project.description}
                 </div>
                 <div class="flex flex-wrap gap-2 pb-3">
@@ -55,7 +57,7 @@ function projectTemplate(project, index) {
                     <a
                         href="${project.url}"
                         target="_blank"
-                        class="bg-primary-light text-white inline-block py-2 px-4 rounded-3xl font-semibold text-xl hover:bg-opacity-90"
+                        class="bg-primary-light text-white inline-block py-2 px-4 rounded-3xl font-semibold text-lg lg:text-xl hover:bg-opacity-90"
                         >Learn More</a
                     >
                 </div>
