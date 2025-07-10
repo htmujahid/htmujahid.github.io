@@ -1,0 +1,33 @@
+---
+import SunIcon from './icons/sun.astro';
+import MoonIcon from './icons/moon.astro';
+import Button from './ui/Button.astro';
+---
+
+<Button variant='ghost' size='sm' id='theme-toggle'>
+  <SunIcon class="fill-background stroke-foreground transition dark:hidden" />
+  <MoonIcon class="hidden fill-background stroke-foreground transition dark:block" />
+</Button>
+
+<script>
+  function disableTransitionsTemporarily() {
+    document.documentElement.classList.add('[&_*]:!transition-none');
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('[&_*]:!transition-none');
+    }, 0);
+  }
+
+  function toggleMode() {
+    disableTransitionsTemporarily();
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+
+  // Add event listener when the script loads
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleMode);
+    }
+  });
+</script>

@@ -1,0 +1,81 @@
+---
+import { Calendar, ChevronLeft, ChevronRight } from "lucide-astro";
+import { blogsList } from "@/data/blogs";
+import PublicLayout from "@/layouts/PublicLayout.astro";
+
+// Pagination logic
+const postsPerPage = 50;
+const currentPage = 1; // This would come from URL params in a real app
+const totalPages = Math.ceil(blogsList.length / postsPerPage);
+const startIndex = (currentPage - 1) * postsPerPage;
+const endIndex = startIndex + postsPerPage;
+const currentBlogs = blogsList.slice(startIndex, endIndex);
+---
+
+<PublicLayout>
+  <div class="mb-8">
+    <div class="mb-8">
+      <h1 class="font-mono text-2xl font-medium mb-2">All Blogs</h1>
+      <p class="font-mono text-sm">
+        {blogsList.length} blogs about development, design, and technology
+      </p>
+    </div>
+    <div class="space-y-6">
+      {
+        currentBlogs.map((blog) => (
+          <div class="border-b border-border pb-4 relative">
+            <h3 class="mb-2">
+              <a href={blog.url} class="underline">
+                {blog.name}
+              </a>
+            </h3>
+            <div class="flex items-center gap-2 mb-2">
+              <Calendar class="h-3 w-3" />
+              <span class="text-sm">{blog.date.toDateString()}</span>
+            </div>
+            <p class="leading-relaxed text-sm truncate">{blog.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    {/* All Posts Link */}
+    <div class="border-t border-stone-300 pt-8">
+      <div class="flex items-center justify-between">
+        <div class="font-mono text-xs text-stone-500">
+          Showing {startIndex + 1}-{Math.min(endIndex, blogsList.length)} of {
+            blogsList.length
+          } posts
+        </div>
+
+        <div class="flex items-center space-x-2">
+          {/* Previous Button */}
+          <button
+            disabled={currentPage === 1}
+            class={`flex items-center space-x-1 px-3 py-2 border font-mono text-xs transition-colors ${
+              currentPage === 1
+                ? "border-stone-200 text-stone-400 cursor-not-allowed"
+                : "border-stone-300 text-stone-600 hover:text-stone-800 hover:bg-stone-50"
+            }`}
+          >
+            <ChevronLeft class="h-3 w-3" />
+            <span>Previous</span>
+          </button>
+
+          {/* Next Button */}
+          <button
+            disabled={currentPage === totalPages}
+            class={`flex items-center space-x-1 px-3 py-2 border font-mono text-xs transition-colors ${
+              currentPage === totalPages
+                ? "border-stone-200 text-stone-400 cursor-not-allowed"
+                : "border-stone-300 text-stone-600 hover:text-stone-800 hover:bg-stone-50"
+            }`}
+          >
+            <span>Next</span>
+            <ChevronRight class="h-3 w-3" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</PublicLayout>

@@ -1,0 +1,45 @@
+<header class="sticky top-0 z-50 w-full">
+  <div class="max-w-3xl mx-auto border-b border-border bg-background">
+    <div class="flex h-14 items-center justify-between px-4">
+      {/* Logo */}
+      <div class="flex items-center">
+        <a href="/" class="flex items-center space-x-2">
+          <div class="h-8 w-8 flex items-center justify-center">
+            <span class="font-bold">HTM</span>
+          </div>
+        </a>
+      </div>
+
+      {/* Right side - Creative Theme Toggle */}
+      <div class="flex items-center">
+        <button id="theme-toggle">
+          <span class="hidden dark:block"> light </span>
+          <span class="dark:hidden"> dark </span>
+        </button>
+      </div>
+
+      <script>
+        function disableTransitionsTemporarily() {
+          document.documentElement.classList.add("[&_*]:!transition-none");
+          window.setTimeout(() => {
+            document.documentElement.classList.remove("[&_*]:!transition-none");
+          }, 0);
+        }
+
+        function toggleMode() {
+          disableTransitionsTemporarily();
+          const isDark = document.documentElement.classList.toggle("dark");
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+        }
+
+        // Add event listener when the script loads
+        document.addEventListener("DOMContentLoaded", () => {
+          const themeToggle = document.getElementById("theme-toggle");
+          if (themeToggle) {
+            themeToggle.addEventListener("click", toggleMode);
+          }
+        });
+      </script>
+    </div>
+  </div>
+</header>

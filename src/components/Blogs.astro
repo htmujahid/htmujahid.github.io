@@ -1,0 +1,39 @@
+---
+import { Calendar } from "lucide-astro";
+import { blogsList } from "../data/blogs";
+
+const blogs = blogsList.slice(0, 3);
+---
+
+<div class="mb-8">
+  <h2 class="text-lg font-medium mb-6">
+    Recent Blogs
+  </h2>
+
+  <div class="space-y-6">
+    {blogs.map((blog) => (
+      <div class="border-b border-border pb-4 relative">
+        <h3 class="mb-2">
+          <a href={blog.url} class="underline">{blog.name}</a>
+        </h3>
+        <div class="flex items-center gap-2 mb-2">
+          <Calendar class="h-3 w-3" />
+          <span class="text-sm">{blog.date.toDateString()}</span>
+        </div>
+        <p class="leading-relaxed truncate text-sm">
+          {blog.description}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  {/* All Posts Link */}
+  <div class="mt-6">
+    <a
+      href="/blogs"
+      class="underline"
+    >
+      All Posts →
+    </a>
+  </div>
+</div>

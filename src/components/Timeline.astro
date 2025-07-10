@@ -1,0 +1,83 @@
+---
+import { Briefcase } from "lucide-astro";
+
+const timeline = [
+  {
+    title: "React Engineer at MyAutoBio",
+    period: "September 2023 — Present",
+    technologies: ["React JS", "Next JS", "Supabase", "Postgres"],
+    achievements: [
+      "Developed AI based autobiography writer",
+      "Modularized code by introducing monorepo",
+      "Used supabase for auth, db, and realtime notifications",
+      "Open AI integration for ai response"
+    ]
+  },
+  {
+    title: "Full Stack Developer at Invogue Solutions",
+    period: "March 2022 — August 2023",
+    technologies: ["Laravel", "Vue JS", "Inertia JS", "MySQL"],
+    achievements: [
+      "Developed SAAS applications on principle of multitenancy",
+      "Optimized the database structure for faster queries",
+      "Implemented the role and permission base authorization",
+      "Introduced the best practices of clean code"
+    ]
+  },
+  {
+    title: "Front End Developer at Civica (Intern)",
+    period: "September 2022 — January 2023",
+    technologies: ["React JS", "Next JS"],
+    achievements: [
+      "Implemented frontend of enterprise level ecommerce plus real estate application from scratch",
+      "Used redux js for app wide state management",
+      "Developed using TailwindCSS as css framework"
+    ]
+  }
+];
+---
+
+<div class="mb-8">
+  <h2 class="text-lg font-medium mb-6">Timeline</h2>
+
+  <div class="relative">
+    {/* Timeline Line */}
+    <div class="absolute left-4 top-0 bottom-0 w-px bg-border"></div>
+
+    <div class="space-y-8">
+      {timeline.map((experience) => (
+        <div class="relative flex items-start">
+          <div
+            class="flex-shrink-0 w-8 h-8 border border-border flex items-center justify-center relative z-10 bg-muted"
+          >
+            <Briefcase class="h-3 w-3" />
+          </div>
+
+          <div class="ml-4 flex-1">
+            <div class="flex items-start justify-between flex-wrap gap-2 mb-3">
+              <h3 class="text-base font-medium">
+                {experience.title}
+              </h3>
+              <span class="text-sm">{experience.period}</span>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              {experience.technologies.map((tech) => (
+                <span class="px-2 py-1 border text-xs border-border">{tech}</span>
+              ))}
+            </div>
+
+            <ul class="space-y-2">
+              {experience.achievements.map((achievement) => (
+                <li class="flex items-start space-x-2">
+                  <span class="w-1 h-1 mt-2 flex-shrink-0"></span>
+                  <span class="text-sm">{achievement}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+---
+import { Folder, Star, GitFork } from "lucide-astro";
+
+const projects = [
+  {
+    name: "sonnetjs/sonnet",
+    url: "https://github.com/sonnetjs/sonnet",
+    description: "Sonnetjs is an opinionated frontend framework for crafting web ui",
+    language: "TypeScript",
+    stars: 85,
+    forks: 5
+  },
+  {
+    name: "shadcn-editor",
+    url: "https://github.com/htmujahid/shadcn-editor",
+    description: "Lexical base rich text editor using shadcn/ui components",
+    language: "TypeScript",
+    stars: 736,
+    forks: 53
+  },
+  {
+    name: "supasheet",
+    url: "https://github.com/htmujahid/supasheet",
+    description: "The supabase admin panel you've been waiting for",
+    language: "TypeScript",
+    stars: 1,
+    forks: null
+  },
+  {
+    name: "barebone-reactivity",
+    url: "https://github.com/htmujahid/barebone-reactivity",
+    description: "Reactivity in Vanilla JS using state and signal",
+    language: "TypeScript",
+    stars: 1,
+    forks: null
+  },
+  {
+    name: "Cleanough/cleanough",
+    url: "https://github.com/Cleanough/cleanough",
+    description: "A code-sharing social app where developers collaborate, receive feedback, and improve their code together.",
+    language: "TypeScript",
+    stars: 2,
+    forks: null
+  },
+  {
+    name: "better-start",
+    url: "https://github.com/htmujahid/better-start",
+    description: "Low-code admin panels for your next project using React, Shadcn, Tanstack, better-auth and drizzle.",
+    language: "TypeScript",
+    stars: 7,
+    forks: null
+  }
+];
+---
+
+<div class="mb-8">
+  <h2 class="text-lg font-medium mb-6">Featured Projects</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {projects.map((project) => (
+      <div class="border border-border bg-card text-card-foreground p-4">
+        <div class="flex items-center space-x-2 mb-3">
+          <Folder class="h-4 w-4" />
+          <a href={project.url} class="underline">{project.name}</a>
+        </div>
+        <p class="mb-4 leading-relaxed text-sm">
+          {project.description}
+        </p>
+        <div class="flex items-center space-x-4 text-sm">
+          <div class="flex items-center space-x-1">
+            <span class="w-2 h-2 inline-block bg-blue-500"></span>
+            <span>{project.language}</span>
+          </div>
+          <div class="flex items-center space-x-1">
+            <Star class="h-3 w-3" />
+            <span>{project.stars}</span>
+          </div>
+          {project.forks && (
+            <div class="flex items-center space-x-1">
+              <GitFork class="h-3 w-3" />
+              <span>{project.forks}</span>
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
