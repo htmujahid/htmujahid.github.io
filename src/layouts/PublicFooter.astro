@@ -1,7 +1,20 @@
-<footer class="px-4 py-6 border-t border-border">
-  <div class="flex justify-center">
-    <div class=" ">
-      © Copyright {new Date().getFullYear()} HTM. All rights reserved.
+---
+import Hr from "../components/Hr.astro";
+
+const currentYear = new Date().getFullYear();
+
+export interface Props {
+  noMarginTop?: boolean;
+}
+
+const { noMarginTop = false } = Astro.props;
+---
+
+<footer class:list={["w-full", { "mt-auto": !noMarginTop }]}>
+  <Hr noPadding />
+  <div class="flex flex-col items-center justify-between gap-4 sm:flex-row py-6">
+    <div class="text-sm text-muted-foreground">
+      © {currentYear} Alex Thompson. All rights reserved.
     </div>
   </div>
 </footer>

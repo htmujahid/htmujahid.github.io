@@ -1,0 +1,94 @@
+---
+interface ExperienceCardProps {
+  company: string;
+  position: string;
+  location: string;
+  duration: string;
+  description: string[];
+  technologies: string[];
+  current: boolean;
+  isLast: boolean;
+}
+
+const {
+  company,
+  position,
+  location,
+  duration,
+  description,
+  technologies,
+  current,
+  isLast,
+} = Astro.props as ExperienceCardProps;
+---
+
+<div class="relative my-6">
+  {/* Timeline Line */}
+  {!isLast && <div class="absolute top-12 left-4 h-full w-px bg-border hidden sm:block" />}
+
+  {/* Timeline Dot */}
+  <div
+    class="absolute top-6 left-2 h-4 w-4 border-2 border-border bg-background hidden sm:block"
+  >
+  </div>
+  {current && <div class="absolute top-7 left-3 h-2 w-2 bg-primary hidden sm:block" />}
+
+  {/* Content */}
+  <div class="ml-0 sm:ml-12">
+    <div class="border border-border bg-card p-6">
+      <div class="space-y-4">
+        {/* Header */}
+        <div class="space-y-1">
+          <div class="flex items-start justify-between">
+            <h3 class="text-lg font-semibold text-foreground">
+              {position}
+            </h3>
+            {
+              current && (
+                <span class="bg-primary px-2 py-1 text-xs font-medium text-primary-foreground">
+                  Current
+                </span>
+              )
+            }
+          </div>
+          <div class="text-sm text-muted-foreground">
+            <span class="font-medium">{company}</span> • {location}
+          </div>
+          <div class="text-sm text-muted-foreground">
+            {duration}
+          </div>
+        </div>
+
+        {/* Description */}
+        <div class="space-y-2">
+          {
+            description.map(item => (
+              <div class="flex items-start text-sm text-foreground">
+                <span class="mt-1 mr-2 text-muted-foreground">•</span>
+                <span>{item}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        {/* Technologies */}
+        <div class="space-y-2">
+          <h4
+            class="text-xs font-medium tracking-wide text-muted-foreground uppercase"
+          >
+            Technologies
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            {
+              technologies.map(tech => (
+                <span class="bg-muted px-2 py-1 text-xs font-medium text-foreground">
+                  {tech}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

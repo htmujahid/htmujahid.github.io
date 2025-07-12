@@ -1,15 +1,95 @@
 ---
-import Blogs from "../components/Blogs.astro";
-import CTA from "../components/CTA.astro";
-import Projects from "../components/Projects.astro";
-import Timeline from "../components/Timeline.astro";
-
+import { Github, Mail, ArrowRight } from "lucide-astro";
 import PublicLayout from "../layouts/PublicLayout.astro";
+import { PROJECTS } from "../constants/projects";
+import { EXPERIENCES } from "../constants/experience";
+import { SOCIALS } from "../constants/socials";
+import Hr from "../components/Hr.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import SocialCard from "../components/SocialCard.astro";
 ---
 
 <PublicLayout>
-	<CTA />
-	<Projects />
-	<Timeline />
-	<Blogs />
+	<main id="main-content" data-layout="index">
+		<section id="hero" class="space-y-6 py-12">
+			<h1 class="mb-1 inline-block text-4xl font-bold sm:text-5xl">
+				Talha Mujahid
+			</h1>
+			<p class="text-sm text-muted-foreground">Full Stack Developer</p>
+
+			<p>
+				I'm a passionate MERN stack developer with experience on multiple
+				platforms. I am a strong advocate for clean and efficient code that is
+				maintainable, scalable, and easy to understand. I'm always seeking out
+				new challenges to grow as an engineer and am highly adaptable to new
+				technologies and fast-paced environments. I also believe in the power of
+				community-driven development through open-source collaboration.
+			</p>
+
+			<div class="flex flex-col gap-4 pt-4 sm:flex-row">
+				<a
+					href="https://github.com/htmujahid"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex h-11 items-center justify-center gap-2 bg-primary px-6 font-mono text-sm font-medium tracking-wider whitespace-nowrap text-primary-foreground uppercase ring-offset-background transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+				>
+					<Github class="h-4 w-4" />
+					GitHub
+				</a>
+
+				<a
+					href="mailto:htmujahid@gmail.com"
+					class="inline-flex h-11 items-center justify-center gap-2 border border-input bg-background bg-transparent px-6 font-mono text-sm font-medium tracking-wider whitespace-nowrap uppercase ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+				>
+					<Mail class="h-4 w-4" />
+					Contact
+				</a>
+			</div>
+		</section>
+
+		<Hr noPadding />
+
+		{
+			PROJECTS.length > 0 && (
+				<>
+					<section id="projects" class="pt-12 pb-6">
+						<h2 class="text-2xl font-semibold tracking-wide">Projects</h2>
+						<ul>
+							{PROJECTS.map((project) => (
+								<ProjectCard {...project} />
+							))}
+						</ul>
+					</section>
+					<Hr />
+				</>
+			)
+		}
+
+		{
+			EXPERIENCES.length > 0 && (
+				<>
+					<section id="experiences" class="pt-12 pb-6">
+						<h2 class="text-2xl font-semibold tracking-wide">Experiences</h2>
+						<ul>
+							{EXPERIENCES.map((experience, index) => (
+								<ExperienceCard
+									{...experience}
+									isLast={index === EXPERIENCES.length - 1}
+								/>
+							))}
+						</ul>
+					</section>
+					<Hr />
+				</>
+			)
+		}
+
+		<section id="socials" class="pt-12 pb-6">
+			<h2 class="text-2xl font-semibold tracking-wide">Socials</h2>
+			<ul class="grid grid-cols-1 gap-4 my-4 sm:grid-cols-2">
+				{SOCIALS.map((social) => <SocialCard {...social} />)}
+			</ul>
+		</section>
+	</main>
 </PublicLayout>

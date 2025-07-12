@@ -1,0 +1,22 @@
+---
+import type { Social } from "@/constants";
+
+interface Props extends Social {}
+
+const { href, icon, linkTitle, name } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block border border-border bg-background p-4"
+>
+  <div class="flex items-center gap-3">
+    <div class="flex-shrink-0"><icon></icon></div>
+    <div>
+      <h3 class="text-sm font-semibold text-foreground">{name}</h3>
+      <p class="text-xs text-muted-foreground">{linkTitle}</p>
+    </div>
+  </div>
+</a>

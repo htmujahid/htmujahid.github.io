@@ -1,18 +1,13 @@
 ---
-import ThemeToggle from "../components/theme-toggle.astro";
 import Layout from "./Layout.astro";
 import PublicFooter from "./PublicFooter.astro";
 import PublicHeader from "./PublicHeader.astro";
 ---
 
 <Layout>
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-3xl mx-auto px-4">
     <PublicHeader />
-    <main class="px-4 py-8">
-      <div>
-        <slot />
-      </div>
-    </main>
+    <slot />
     <PublicFooter />
   </div>
 </Layout>

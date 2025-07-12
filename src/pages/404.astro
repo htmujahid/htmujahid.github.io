@@ -1,0 +1,25 @@
+---
+import PublicLayout from "@/layouts/PublicLayout.astro";
+
+---
+<PublicLayout>
+  <div class="text-center space-y-6">
+    <div class="space-y-2">
+      <h1 class="text-6xl font-bold text-foreground">404</h1>
+      <h2 class="text-xl font-semibold text-foreground">Page Not Found</h2>
+    </div>
+
+    <p class="text-sm text-muted-foreground max-w-md mx-auto">
+      The page you're looking for doesn't exist or has been moved to a different location.
+    </p>
+
+    <div class="pt-4">
+      <a
+        href="/"
+        class="inline-block px-6 py-3 text-sm font-medium text-foreground bg-background border border-border"
+      >
+        Back to Home
+      </a>
+    </div>
+  </div>
+</PublicLayout>
