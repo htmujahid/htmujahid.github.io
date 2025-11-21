@@ -49,12 +49,12 @@ export const PROJECTS = [
     technologies: ["React", "Next JS", "Tailwind CSS", "MongoDB"],
   },
   {
-    title: "better-start",
-    description: "Low-code admin panels for your next project using React, Shadcn, Tanstack, better-auth and drizzle.",
+    title: "Undocx",
+    description: "A Google Docs-like 'realtime collaborative rich text editor' built with Next.js, Lexical.dev, Supabase, and shadcn UI.",
     primaryLanguage: "TypeScript",
     languageColor: "bg-blue-500",
-    stars: "12",
+    stars: "3",
     forks: "0",
-    technologies: ["React", "Tanstack", "Better Auth", "Drizzle"],
+    technologies: ["React", "NextJS", "Supabase", "Realtime"],
   },
 ]
