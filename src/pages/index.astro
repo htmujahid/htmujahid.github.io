@@ -1,13 +1,15 @@
 ---
 import { Github, Mail, ArrowRight } from "lucide-astro";
 import PublicLayout from "../layouts/PublicLayout.astro";
-import { PROJECTS } from "../constants/projects";
+import { getTopRepos } from "../lib/github";
 import { EXPERIENCES } from "../constants/experience";
 import { SOCIALS } from "../constants/socials";
 import Hr from "../components/Hr.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import SocialCard from "../components/SocialCard.astro";
+
+const projects = await getTopRepos();
 ---
 
 <PublicLayout>
@@ -51,12 +53,12 @@ import SocialCard from "../components/SocialCard.astro";
 		<Hr noPadding />
 
 		{
-			PROJECTS.length > 0 && (
+			projects.length > 0 && (
 				<>
 					<section id="projects" class="pt-12 pb-6">
 						<h2 class="text-2xl font-semibold tracking-wide">Projects</h2>
 						<ul>
-							{PROJECTS.map((project) => (
+							{projects.map((project) => (
 								<ProjectCard {...project} />
 							))}
 						</ul>
