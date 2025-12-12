@@ -3,7 +3,7 @@ export const FEATURED_REPOS = [
   'htmujahid/shadcn-editor',
   'sonnetjs/sonnet',
   'htmujahid/supasheet',
-  'htmujahid/barebone-reactivity',
+  'htmujahid/cleanough',
   'htmujahid/undocx',
   'htmujahid/next-bard',
 ];
