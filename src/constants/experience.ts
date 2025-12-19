@@ -28,18 +28,6 @@ export const EXPERIENCES = [
     technologies: ["Laravel", "Vue JS", "Inertia JS", "MySQL"],
   },
   {
-    company: "Civica",
-    position: "Frontend Developer",
-    duration: "September 2022 — January 2023",
-    location: "Remote",
-    description: [
-      "Implemented frontend of enterprise level ecommerce plus real estate application from scratch",
-      "Used redux js for app wide state management",
-      "Developed using TailwindCSS as css framework"
-    ],
-    technologies: ["React JS", "Next JS"],
-  },
-  {
     company: "Freelance",
     position: "Web Developer",
     duration: "January 2022 — Present",
