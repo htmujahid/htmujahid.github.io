@@ -1,0 +1,52 @@
+---
+import SectionHeading from "@/components/site/section-heading.astro"
+import { experience } from "@/data/experience"
+---
+
+<section
+  id="experience"
+  class="mx-auto max-w-5xl scroll-mt-16 border-t border-border px-6 py-20"
+>
+  <SectionHeading index="02" title="Background" />
+
+  <ol class="flex flex-col">
+    {
+      experience.map((entry) => (
+        <li class="grid grid-cols-[auto_1fr] gap-x-6 border-b border-border py-8 first:pt-0 last:border-b-0 last:pb-0 sm:grid-cols-[10rem_auto_1fr]">
+          <p class="col-span-2 mb-2 text-xs font-semibold tracking-widest text-muted-foreground uppercase sm:col-span-1 sm:mb-0">
+            {entry.start} — {entry.current ? "Present" : entry.end}
+          </p>
+
+          <div class="relative hidden sm:block">
+            <span class="absolute top-1 left-0 size-2.5 border border-foreground bg-background" />
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <div>
+              <h3 class="text-base font-semibold">
+                {entry.role}
+                <span class="font-normal text-muted-foreground">
+                  {" "}
+                  · {entry.org}
+                </span>
+              </h3>
+              <p class="text-xs tracking-wide text-muted-foreground uppercase">
+                {entry.location}
+              </p>
+            </div>
+            {entry.highlights.length > 0 && (
+              <ul class="flex flex-col gap-1.5 text-sm text-muted-foreground">
+                {entry.highlights.map((point) => (
+                  <li class="flex gap-2">
+                    <span class="text-foreground">—</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>

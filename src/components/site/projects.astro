@@ -1,0 +1,112 @@
+---
+import SectionHeading from "@/components/site/section-heading.astro"
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { GitHubIcon } from "@/components/site/icons"
+import { StarIcon, ArrowUpRightIcon } from "lucide-react"
+import { projects } from "@/data/projects"
+---
+
+<section
+  id="projects"
+  class="mx-auto max-w-5xl scroll-mt-16 border-t border-border px-6 py-20"
+>
+  <SectionHeading
+    index="01"
+    title="Projects"
+    description="A selection of open-source tools and products I've built and maintain."
+  />
+
+  <div class="grid gap-6 sm:grid-cols-2">
+    {
+      projects.map((project) => (
+        <Card
+          className={`gap-5 border border-border ring-0 ${project.name === "supasheet" ? "sm:col-span-2" : ""}`}
+        >
+          <img
+            src={project.cover.light}
+            data-light-src={project.cover.light}
+            data-dark-src={project.cover.dark}
+            data-theme-image
+            alt={`${project.name} preview`}
+            loading="lazy"
+            decoding="async"
+            class="aspect-video w-full border-b border-border bg-muted object-cover"
+          />
+
+          <CardHeader>
+            <CardTitle>{project.name}</CardTitle>
+            {project.stars && (
+              <CardAction>
+                <Badge
+                  variant="outline"
+                  className="gap-1 border border-border px-2 py-1"
+                >
+                  <StarIcon className="size-3" />
+                  {project.stars}
+                </Badge>
+              </CardAction>
+            )}
+            <CardDescription>{project.description}</CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span class="border border-border px-2 py-0.5 text-[0.65rem] font-medium tracking-wide text-muted-foreground uppercase">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </CardContent>
+
+          <CardFooter className="gap-4 border-t border-border pt-5">
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest text-foreground uppercase hover:underline"
+            >
+              <GitHubIcon className="size-3.5" />
+              Source
+            </a>
+            {project.demoHref && (
+              <a
+                href={project.demoHref}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest text-foreground uppercase hover:underline"
+              >
+                <ArrowUpRightIcon className="size-3.5" />
+                Live demo
+              </a>
+            )}
+          </CardFooter>
+        </Card>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  function syncThemeImages() {
+    const isDark = document.documentElement.classList.contains("dark")
+    document
+      .querySelectorAll<HTMLImageElement>("[data-theme-image]")
+      .forEach((img) => {
+        const src = isDark ? img.dataset.darkSrc : img.dataset.lightSrc
+        if (src && img.getAttribute("src") !== src) img.setAttribute("src", src)
+      })
+  }
+
+  syncThemeImages()
+  window.addEventListener("themechange", syncThemeImages)
+</script>

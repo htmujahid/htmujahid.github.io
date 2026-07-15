@@ -1,0 +1,19 @@
+---
+import { profile } from "@/data/profile"
+
+const year = new Date().getFullYear()
+---
+
+<footer class="border-t border-border">
+  <div
+    class="mx-auto flex max-w-5xl flex-col-reverse items-center justify-between gap-4 px-6 py-8 text-xs tracking-wide text-muted-foreground uppercase sm:flex-row"
+  >
+    <p>&copy; {year} {profile.name}. All rights reserved.</p>
+    <a
+      href="#home"
+      class="font-semibold text-foreground transition-colors hover:text-muted-foreground"
+    >
+      Back to top ↑
+    </a>
+  </div>
+</footer>

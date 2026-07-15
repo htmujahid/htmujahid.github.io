@@ -1,0 +1,52 @@
+---
+import "@/styles/global.css"
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = "Talha Mujahid — Full Stack Developer",
+  description = "Full stack developer building clean, scalable web apps with React, Next.js, Node.js and PostgreSQL. Maintainer of shadcn-editor and other open-source tools.",
+} = Astro.props
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Talha Mujahid" />
+    <link rel="canonical" href={Astro.url} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content={Astro.url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:creator" content="@htmujahid" />
+
+    <script is:inline>
+      // Runs before first paint to avoid a light/dark flash.
+      const stored = localStorage.getItem("theme")
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches
+      if (stored === "dark" || (!stored && prefersDark)) {
+        document.documentElement.classList.add("dark")
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

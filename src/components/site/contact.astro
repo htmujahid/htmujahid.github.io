@@ -1,0 +1,66 @@
+---
+import SectionHeading from "@/components/site/section-heading.astro"
+import { buttonVariants } from "@/components/ui/button"
+import { CopyEmailButton } from "@/components/site/copy-email-button"
+import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/site/icons"
+import { profile } from "@/data/profile"
+
+const socialLinkClass =
+  "flex size-9 items-center justify-center border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground"
+---
+
+<section
+  id="contact"
+  class="mx-auto max-w-5xl scroll-mt-16 border-t border-border px-6 py-20"
+>
+  <SectionHeading
+    index="03"
+    title="Contact"
+    description="Have a project in mind, or just want to talk shop? My inbox is open."
+  />
+
+  <div class="flex flex-col items-start gap-8 border border-border p-8 sm:p-12">
+    <p class="max-w-lg text-lg leading-relaxed">
+      I'm {profile.availableForWork ? "currently available for" : "always open to"} freelance
+      work, full-time roles and interesting open-source collaborations.
+      Reach out and I'll get back to you within a day or two.
+    </p>
+
+    <div class="flex flex-wrap items-center gap-3">
+      <a href={`mailto:${profile.email}`} class={buttonVariants({ size: "lg" })}>
+        {profile.email}
+      </a>
+      <CopyEmailButton client:load email={profile.email} />
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a
+        href={profile.social.github}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"
+        class={socialLinkClass}
+      >
+        <GitHubIcon className="size-4" />
+      </a>
+      <a
+        href={profile.social.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"
+        class={socialLinkClass}
+      >
+        <LinkedInIcon className="size-4" />
+      </a>
+      <a
+        href={profile.social.twitter}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="X / Twitter"
+        class={socialLinkClass}
+      >
+        <XIcon className="size-4" />
+      </a>
+    </div>
+  </div>
+</section>
