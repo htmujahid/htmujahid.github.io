@@ -1,0 +1,346 @@
+:root {
+  --bg: #0b0d10;
+  --text: #eef1f4;
+  --muted: #98a2ad;
+  --accent: #5eead4;
+  --border: #1f242b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, "SF Mono", "Fira Code", "JetBrains Mono", "Cascadia Mono",
+    Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.screen {
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  position: relative;
+}
+
+/* --- only the content column slides; the decor icon on the right stays put --- */
+
+.content-viewport {
+  overflow: hidden;
+  position: relative;
+  border-right: 1px solid var(--border);
+}
+
+.content-track {
+  --sections: 3;
+  display: flex;
+  width: calc(var(--sections) * 100%);
+  height: 100%;
+  transition: transform 0.85s cubic-bezier(0.83, 0, 0.17, 1);
+  will-change: transform;
+}
+
+.content-panel {
+  flex: 0 0 calc(100% / 3);
+  width: calc(100% / 3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: clamp(1.5rem, 6vw, 4.5rem);
+}
+
+.tag {
+  margin: 0.9rem 0 0;
+  color: var(--accent);
+  font-size: clamp(0.75rem, 1.8vh, 0.85rem);
+}
+
+.tag:first-child {
+  margin-top: 0;
+}
+
+.name {
+  margin: 0.1rem 0 0;
+  font-size: clamp(1.5rem, 5vh, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.bio {
+  margin: 0.1rem 0 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: clamp(0.85rem, 2vh, 1.05rem);
+  line-height: 1.6;
+}
+
+.links {
+  list-style: none;
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  column-gap: 0.6rem;
+  row-gap: 0.3rem;
+  margin: 0.1rem 0 0;
+  padding: 0;
+  font-size: clamp(0.78rem, 1.9vh, 0.92rem);
+}
+
+.links li {
+  display: contents;
+}
+
+.links li::before {
+  content: "-";
+  color: var(--muted);
+}
+
+.links .label {
+  color: var(--muted);
+}
+
+.links a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px;
+  justify-self: start;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.prompt-idle {
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  font-size: clamp(0.75rem, 1.8vh, 0.85rem);
+  line-height: 1;
+}
+
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.4rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: hint-nudge 2.2s ease-in-out infinite;
+}
+
+.scroll-hint svg {
+  width: 14px;
+  height: 14px;
+}
+
+.scroll-hint-left {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  animation-name: hint-nudge-left;
+}
+
+@keyframes hint-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes hint-nudge-left {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+}
+
+/* --- projects slide: a distinct numbered-card layout, not a terminal listing --- */
+
+.section-title {
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-size: clamp(1rem, 2.6vh, 1.3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.project-grid {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  max-width: 40rem;
+  font-size: clamp(0.78rem, 1.9vh, 0.92rem);
+}
+
+.project-card {
+  display: flex;
+  gap: 0.8rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--border);
+  transition: border-color 0.2s ease;
+}
+
+.project-card:hover {
+  border-left-color: var(--accent);
+}
+
+.project-index {
+  color: var(--border);
+  font-weight: 700;
+  font-size: 0.85em;
+  padding-top: 0.15em;
+}
+
+.project-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.project-heading a {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.project-heading a:hover,
+.project-heading a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.project-stars {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+.project-desc {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+/* --- stack slide: compact category/value listing, same grid pattern as contact --- */
+
+.tech-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 0.7rem;
+  row-gap: 0.4rem;
+  margin: 0.1rem 0 0;
+  padding: 0;
+  max-width: 40rem;
+  font-size: clamp(0.72rem, 1.7vh, 0.85rem);
+}
+
+.tech-list li {
+  display: contents;
+}
+
+.tech-list .label {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.tech-values {
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.footer {
+  position: absolute;
+  z-index: 5;
+  bottom: clamp(1rem, 4vh, 1.75rem);
+  left: clamp(1.5rem, 6vw, 4.5rem);
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.decor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(94, 234, 212, 0.025) 0,
+      rgba(94, 234, 212, 0.025) 1px,
+      transparent 1px,
+      transparent 28px
+    ),
+    radial-gradient(circle at 65% 50%, rgba(94, 234, 212, 0.06), transparent 60%);
+}
+
+.glyph {
+  width: clamp(9rem, 24vw, 17rem);
+  height: auto;
+  color: rgba(94, 234, 212, 0.16);
+}
+
+@media (max-width: 760px) {
+  .screen {
+    grid-template-columns: 1fr;
+  }
+
+  .content-viewport {
+    border-right: none;
+  }
+
+  .content-panel {
+    padding-bottom: 3.5rem;
+  }
+
+  .decor {
+    display: none;
+  }
+}
