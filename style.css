@@ -1,9 +1,9 @@
 :root {
-  --bg: #0b0d10;
-  --text: #eef1f4;
-  --muted: #98a2ad;
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #a1a1aa;
   --accent: #5eead4;
-  --border: #1f242b;
+  --border: #27272a;
 }
 
 * {
@@ -34,7 +34,7 @@ body {
   height: 100svh;
   height: 100dvh;
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
   position: relative;
 }
 
@@ -43,27 +43,48 @@ body {
 .content-viewport {
   overflow: hidden;
   position: relative;
-  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
 .content-track {
-  --sections: 3;
-  display: flex;
-  width: calc(var(--sections) * 100%);
+  position: relative;
   height: 100%;
-  transition: transform 0.85s cubic-bezier(0.83, 0, 0.17, 1);
-  will-change: transform;
 }
 
+/* panels are stacked like cards: each one rises from the bottom and covers the
+   previous, leaving a strip of every earlier slide visible above it */
 .content-panel {
-  flex: 0 0 calc(100% / 3);
-  width: calc(100% / 3);
-  height: 100%;
+  --i: 0;
+  --peek: clamp(14px, 2.4vh, 22px);
+  position: absolute;
+  top: calc(var(--i) * var(--peek));
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: calc(var(--i) + 1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.35rem;
   padding: clamp(1.5rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--border);
+  border-radius: 14px 14px 0 0;
+  transform: translateY(calc((1 - var(--p, 0)) * 110%));
+  background: color-mix(in srgb, #0c0c0d calc(var(--cover, 0) * 100%), var(--bg));
+  box-shadow: 0 -18px 36px rgba(0, 0, 0, 0.9);
+  will-change: transform;
+}
+
+.content-panel:nth-child(2) {
+  --i: 1;
+}
+
+.content-panel:nth-child(3) {
+  --i: 2;
+}
+
+.content-panel:first-child {
+  --p: 1;
 }
 
 .tag {
@@ -118,8 +139,6 @@ body {
 .links a {
   color: var(--text);
   text-decoration: none;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1px;
   justify-self: start;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
@@ -127,14 +146,6 @@ body {
 .links a:hover,
 .links a:focus-visible {
   color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-.prompt-idle {
-  margin: 1.1rem 0 0;
-  color: var(--muted);
-  font-size: clamp(0.75rem, 1.8vh, 0.85rem);
-  line-height: 1;
 }
 
 .scroll-hint {
@@ -154,106 +165,30 @@ body {
   height: 14px;
 }
 
-.scroll-hint-left {
+.scroll-hint-up {
   margin-top: 0;
   margin-bottom: 1.6rem;
-  animation-name: hint-nudge-left;
+  animation-name: hint-nudge-up;
 }
 
 @keyframes hint-nudge {
   0%,
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(4px);
+    transform: translateY(4px);
   }
 }
 
-@keyframes hint-nudge-left {
+@keyframes hint-nudge-up {
   0%,
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-4px);
+    transform: translateY(-4px);
   }
-}
-
-/* --- projects slide: a distinct numbered-card layout, not a terminal listing --- */
-
-.section-title {
-  margin: 0 0 0.5rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--border);
-  color: var(--text);
-  font-size: clamp(1rem, 2.6vh, 1.3rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-
-.project-grid {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  margin: 0;
-  padding: 0;
-  max-width: 40rem;
-  font-size: clamp(0.78rem, 1.9vh, 0.92rem);
-}
-
-.project-card {
-  display: flex;
-  gap: 0.8rem;
-  padding-left: 0.9rem;
-  border-left: 2px solid var(--border);
-  transition: border-color 0.2s ease;
-}
-
-.project-card:hover {
-  border-left-color: var(--accent);
-}
-
-.project-index {
-  color: var(--border);
-  font-weight: 700;
-  font-size: 0.85em;
-  padding-top: 0.15em;
-}
-
-.project-heading {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-}
-
-.project-heading a {
-  color: var(--text);
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.project-heading a:hover,
-.project-heading a:focus-visible {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-.project-stars {
-  color: var(--muted);
-  font-size: 0.85em;
-}
-
-.project-desc {
-  margin: 0.2rem 0 0;
-  color: var(--muted);
-  font-size: 0.85em;
-  line-height: 1.4;
 }
 
 /* --- stack slide: compact category/value listing, same grid pattern as contact --- */
@@ -279,29 +214,29 @@ body {
   white-space: nowrap;
 }
 
+.tech-list a.label {
+  color: var(--text);
+  text-decoration: none;
+  justify-self: start;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.tech-list a.label:hover,
+.tech-list a.label:focus-visible {
+  color: var(--accent);
+}
+
+.tech-values.dim {
+  color: var(--muted);
+}
+
+.stars {
+  color: var(--accent);
+}
+
 .tech-values {
   color: var(--text);
   line-height: 1.5;
-}
-
-.cursor {
-  color: var(--accent);
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-.footer {
-  position: absolute;
-  z-index: 5;
-  bottom: clamp(1rem, 4vh, 1.75rem);
-  left: clamp(1.5rem, 6vw, 4.5rem);
-  color: var(--muted);
-  font-size: 0.7rem;
 }
 
 .decor {
@@ -310,6 +245,7 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  order: -1;
   background-image:
     repeating-linear-gradient(
       135deg,
@@ -333,7 +269,7 @@ body {
   }
 
   .content-viewport {
-    border-right: none;
+    border-left: none;
   }
 
   .content-panel {
