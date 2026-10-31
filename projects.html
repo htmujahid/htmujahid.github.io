@@ -3,92 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Projects — Talha Mujahid</title>
-<meta name="description" content="Projects by Talha Mujahid — Software Engineer.">
+<title>Projects | Talha Mujahid</title>
+<meta name="description" content="Projects by Talha Mujahid | Software Engineer.">
 <link rel="canonical" href="https://htmujahid.github.io/projects.html">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#f7f7f2">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Talha Mujahid">
-<meta property="og:title" content="Projects — Talha Mujahid">
-<meta property="og:description" content="Projects by Talha Mujahid — Software Engineer.">
+<meta property="og:title" content="Projects | Talha Mujahid">
+<meta property="og:description" content="Projects by Talha Mujahid | Software Engineer.">
 <meta property="og:url" content="https://htmujahid.github.io/projects.html">
 <meta property="og:image" content="https://htmujahid.github.io/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://htmujahid.github.io/og-image.png">
-<style>
-:root{--bg:#000;--text:#fff;--muted:#a1a1aa;--accent:#5eead4;--border:#27272a;--panel:#0c0c0d}
-*{box-sizing:border-box}
-::selection{background:var(--accent);color:var(--bg)}
-body{margin:0;background:var(--bg);color:var(--text);
-  font-family:ui-monospace,"SF Mono","Fira Code","JetBrains Mono","Cascadia Mono",Menlo,Consolas,"Liberation Mono",monospace;
-  font-size:.92rem;line-height:1.6}
-a{color:var(--text);text-decoration:none;transition:color .15s ease}
-a:hover,a:focus-visible{color:var(--accent)}
-.wrap{max-width:68rem;margin:0 auto;padding:clamp(1.5rem,6vw,4rem) 16px 4rem}
-.tag{margin:2rem 0 .4rem;color:var(--accent);font-size:.85rem}
-.tag:first-child{margin-top:0}
-h1{margin:.1rem 0 0;font-size:clamp(1.5rem,5vw,2.5rem);font-weight:700;letter-spacing:-.01em}
-.muted{color:var(--muted)}
-.bio{margin:.1rem 0 0;color:var(--muted)}
-h1 a{color:inherit}
-h1 a:hover{color:inherit}
-.top{display:flex;flex-wrap:wrap;gap:.2rem 1.4rem;margin-top:1rem}
-.top a{color:var(--muted)}
-.top a:hover,.top a:focus-visible{color:var(--accent)}
-.top a[aria-current=page]{color:var(--accent)}
-.top a[aria-current=page]::before{content:"> "}
-
-.filters{display:flex;flex-wrap:wrap;gap:.3rem 1rem;align-items:center;margin:.3rem 0 1.4rem}
-.filters input{flex:1 1 12rem;min-width:0;background:none;border:0;border-bottom:1px solid var(--border);
-  color:var(--text);font:inherit;padding:.2rem 0;outline:none;border-radius:0}
-.filters input:focus{border-color:var(--accent)}
-.filters input::placeholder{color:var(--muted)}
-
-.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.6rem}
-.item{display:flex;flex-direction:column;gap:.8rem}
-.thumb{display:block;border-radius:6px;aspect-ratio:16/10;border:1px solid var(--border);background:var(--panel);position:relative;overflow:hidden}
-.thumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:none;transition:filter .2s ease,transform .3s ease}
-.thumb:hover,.thumb:focus-visible{border-color:var(--accent)}
-.item:hover .thumb img{transform:scale(1.02)}
-.row1{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .8rem}
-.name{font-weight:700;font-size:1rem}
-.stars{color:var(--accent)}
-.desc{margin:.2rem 0 .4rem;color:var(--muted);max-width:40rem}
-.meta{display:flex;flex-wrap:wrap;gap:.1rem 1rem;font-size:.8rem;color:var(--muted)}
-.meta a{color:var(--text)}
-.meta a:hover{color:var(--accent)}
-.empty{color:var(--muted);padding:1.2rem 0;display:none}
-footer{margin-top:2.5rem;color:var(--muted);font-size:.8rem}
-
-@media (max-width:700px){.list{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="wrap">
-  <header>
-    <p class="tag">$ whoami</p>
-    <h1><a href="./">Talha Mujahid</a></h1>
-    <p class="bio">Software Engineer</p>
-    <nav class="top" aria-label="Site">
-      <a href="./">home</a>
-      <a href="projects.html" aria-current="page">projects</a>
-      <a href="https://github.com/htmujahid" target="_blank" rel="noopener">github</a>
-      <a href="mailto:htmujahid@gmail.com">email</a>
-    </nav>
-  </header>
-
-  <p class="tag">$ projects --list <span class="muted" id="count"></span></p>
-  <div class="filters" id="filters">
-    <input id="q" type="search" placeholder="grep …" aria-label="Search projects" autocomplete="off">
-  </div>
+<main class="page projects-page">
+  <header class="site-header"><a class="wordmark" href="./" aria-label="Talha Mujahid home">tm<span>.</span></a><nav class="site-nav" aria-label="Main navigation"><a href="./">Home</a><a href="projects.html" aria-current="page">Work</a><a href="mailto:htmujahid@gmail.com">Get in touch ↗</a></nav></header>
+  <section class="projects-intro"><p class="eyebrow">The project archive</p><h1>Things I’ve built<span>.</span></h1><p>Experiments, open-source tools, and ideas brought to life.</p></section>
+  <div class="filters" id="filters"><label for="q">All projects <span id="count" aria-live="polite"></span></label><input id="q" type="search" placeholder="Search projects…" autocomplete="off"></div>
   <ul class="list" id="list"></ul>
-  <p class="empty" id="empty">no matches</p>
+  <p class="empty" id="empty">No projects match your search.</p>
 
-  <footer><a href="./">$ cd ..</a></footer>
+  <footer class="site-footer"><a href="./">← Back to home</a><span>Talha Mujahid / Software Engineer</span></footer>
 </main>
 <script>
 const $=s=>document.querySelector(s);
