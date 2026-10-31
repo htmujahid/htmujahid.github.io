@@ -4,14 +4,6 @@
     "repo": "htmujahid/shadcn-editor"
   },
   {
-    "thumb": "rhythm",
-    "repo": "rhythmjs/rhythm"
-  },
-  {
-    "thumb": "raga",
-    "repo": "raga-lang/raga"
-  },
-  {
     "thumb": "supasheet",
     "repo": "supasheet/supasheet"
   },
@@ -34,6 +26,14 @@
   {
     "thumb": "sonnet",
     "repo": "sonnetjs/sonnet"
+  },
+  {
+    "thumb": "rhythm",
+    "repo": "rhythmjs/rhythm"
+  },
+  {
+    "thumb": "raga",
+    "repo": "raga-lang/raga"
   },
   {
     "thumb": "cleanough",
