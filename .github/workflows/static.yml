@@ -6,6 +6,10 @@ on:
   push:
     branches: ["master"]
 
+  # Refreshes the project stars and descriptions on projects.html
+  schedule:
+    - cron: "17 * * * *"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -31,6 +35,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Build projects data
+        run: node scripts/build-projects.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

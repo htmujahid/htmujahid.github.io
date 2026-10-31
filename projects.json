@@ -1,0 +1,71 @@
+[
+  {
+    "thumb": "shadcn-editor",
+    "repo": "htmujahid/shadcn-editor"
+  },
+  {
+    "thumb": "rhythm",
+    "repo": "rhythmjs/rhythm"
+  },
+  {
+    "thumb": "raga",
+    "repo": "raga-lang/raga"
+  },
+  {
+    "thumb": "supasheet",
+    "repo": "supasheet/supasheet"
+  },
+  {
+    "thumb": "slidx",
+    "repo": "htmujahid/slidx"
+  },
+  {
+    "thumb": "undocx",
+    "repo": "htmujahid/undocx"
+  },
+  {
+    "thumb": "viewust",
+    "repo": "htmujahid/viewust"
+  },
+  {
+    "thumb": "adatnama",
+    "repo": "htmujahid/adatnama"
+  },
+  {
+    "thumb": "sonnet",
+    "repo": "sonnetjs/sonnet"
+  },
+  {
+    "thumb": "cleanough",
+    "repo": "htmujahid/cleanough"
+  },
+  {
+    "thumb": "intentui-editor",
+    "repo": "intentui/editor",
+    "note": "contributor"
+  },
+  {
+    "thumb": "cholab-desktop",
+    "repo": "htmujahid/cholab-desktop"
+  },
+  {
+    "thumb": "postgrex",
+    "repo": "htmujahid/postgrex"
+  },
+  {
+    "thumb": "notifro",
+    "repo": "htmujahid/notifro"
+  },
+  {
+    "thumb": "barebone-reactivity",
+    "repo": "htmujahid/barebone-reactivity"
+  },
+  {
+    "thumb": "taskage",
+    "repo": "htmujahid/taskage"
+  },
+  {
+    "thumb": "social-app",
+    "repo": "htmujahid/social-app"
+  }
+]

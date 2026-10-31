@@ -91,62 +91,34 @@ footer{margin-top:2.5rem;color:var(--muted);font-size:.8rem}
   <footer><a href="./">$ cd ..</a></footer>
 </main>
 <script>
-// only the repo list lives here; everything else comes from the GitHub API
-const P = [
- {thumb:"shadcn-editor",repo:"htmujahid/shadcn-editor"},
- {thumb:"rhythm",repo:"rhythmjs/rhythm"},
- {thumb:"raga",repo:"raga-lang/raga"},
- {thumb:"supasheet",repo:"supasheet/supasheet"},
- {thumb:"slidx",repo:"htmujahid/slidx"},
- {thumb:"undocx",repo:"htmujahid/undocx"},
- {thumb:"viewust",repo:"htmujahid/viewust"},
- {thumb:"adatnama",repo:"htmujahid/adatnama"},
- {thumb:"sonnet",repo:"sonnetjs/sonnet"},
- {thumb:"cleanough",repo:"htmujahid/cleanough"},
- {thumb:"intentui-editor",repo:"intentui/editor",note:"contributor"},
- {thumb:"cholab-desktop",repo:"htmujahid/cholab-desktop"},
- {thumb:"postgrex",repo:"htmujahid/postgrex"},
- {thumb:"notifro",repo:"htmujahid/notifro"},
- {thumb:"barebone-reactivity",repo:"htmujahid/barebone-reactivity"},
- {thumb:"taskage",repo:"htmujahid/taskage"},
- {thumb:"social-app",repo:"htmujahid/social-app"},
-];
 const $=s=>document.querySelector(s);
-const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const KEY="archives:v1",TTL=36e5;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt=n=>n>=1000?(n/1000).toFixed(1).replace(".0","")+"k":String(n);
-let live={},settled=false;
-try{const c=JSON.parse(localStorage.getItem(KEY)||"null");if(c&&c.data)live=c.data;window.__t=c&&c.t||0}catch(e){}
-function merged(p){const l=live[p.repo]||{};
-  return {...p,name:p.note?p.repo:p.repo.split("/").pop(),
-    desc:l.desc,lang:l.lang,stars:l.stars,site:l.site}}
+let P=[],loaded=false;
 const thumb=p=>`<img src="thumbs/${p.thumb}.png" width="1280" height="800" alt="${esc(p.name)} illustration" loading="lazy">`;
 function render(){
   const q=$("#q").value.toLowerCase();
-  const l=P.map(merged).filter(p=>(p.name+p.desc+(p.lang||"")).toLowerCase().includes(q));
-  $("#count").textContent=`(${l.length})`;
-  $("#empty").style.display=l.length?"none":"block";
+  const l=P.filter(p=>(p.name+(p.desc||"")+(p.lang||"")).toLowerCase().includes(q));
+  $("#count").textContent=loaded?`(${l.length})`:"";
+  $("#empty").style.display=loaded&&!l.length?"block":"none";
   $("#list").innerHTML=l.map(p=>`<li class="item">
     <a class="thumb" href="${p.site||`https://github.com/${p.repo}`}" target="_blank" rel="noopener" tabindex="-1">${thumb(p)}</a>
     <div>
       <div class="row1"><a class="name" href="https://github.com/${p.repo}" target="_blank" rel="noopener">${esc(p.name)}</a>${p.stars?`<span class="stars">&#9733; ${fmt(p.stars)}</span>`:""}</div>
-      <p class="desc">${esc(p.desc||(settled?"":"loading…"))}</p>
-      <div class="meta">${p.lang?`<span>${esc(p.lang)}</span>`:""}${p.note?`<span>${p.note}</span>`:""}${p.site?`<a href="${p.site}" target="_blank" rel="noopener">live &rarr;</a>`:""}<a href="https://github.com/${p.repo}" target="_blank" rel="noopener">source &rarr;</a></div>
+      ${p.desc?`<p class="desc">${esc(p.desc)}</p>`:""}
+      <div class="meta">${p.lang?`<span>${esc(p.lang)}</span>`:""}${p.note?`<span>${esc(p.note)}</span>`:""}${p.site?`<a href="${p.site}" target="_blank" rel="noopener">live &rarr;</a>`:""}<a href="https://github.com/${p.repo}" target="_blank" rel="noopener">source &rarr;</a></div>
     </div></li>`).join("");
 }
-async function refresh(){
-  if(Date.now()-(window.__t||0)<TTL){settled=true;return}
-  const res=await Promise.allSettled(P.map(p=>fetch(`https://api.github.com/repos/${p.repo}`,{headers:{Accept:"application/vnd.github+json"}}).then(r=>r.ok?r.json():Promise.reject(r.status))));
-  const data={...live};let ok=0;
-  res.forEach((r,i)=>{if(r.status!=="fulfilled")return;ok++;const g=r.value;
-    data[P[i].repo]={desc:g.description,lang:g.language,stars:g.stargazers_count,site:g.homepage||""}});
-  settled=true;
-  if(!ok){render();return}
-  live=data;try{localStorage.setItem(KEY,JSON.stringify({t:Date.now(),data}))}catch(e){}
-  render();
+// projects.live.json is generated at deploy time (scripts/build-projects.mjs) with fresh GitHub
+// data; projects.json is the plain list it is built from, used if the live file is missing.
+async function load(){
+  for(const f of ["projects.live.json","projects.json"]){
+    try{const r=await fetch(f);if(r.ok){P=(await r.json()).map(p=>({...p,name:p.note?p.repo:p.repo.split("/").pop()}));break}}catch(e){}
+  }
+  loaded=true;render();
 }
 $("#q").oninput=render;
-render();refresh();
+load();
 </script>
 </body>
 </html>
