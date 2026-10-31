@@ -230,6 +230,20 @@ body {
   color: var(--muted);
 }
 
+.more {
+  align-self: flex-start;
+  margin-top: 0.9rem;
+  color: var(--accent);
+  font-size: clamp(0.72rem, 1.7vh, 0.85rem);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.more:hover,
+.more:focus-visible {
+  color: var(--text);
+}
+
 .stars {
   color: var(--accent);
 }
