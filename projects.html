@@ -1,65 +1,268 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Projects | Talha Mujahid</title>
-<meta name="description" content="Projects by Talha Mujahid | Software Engineer.">
-<link rel="canonical" href="https://htmujahid.github.io/projects.html">
-<meta name="theme-color" content="#f7f7f2">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Talha Mujahid">
-<meta property="og:title" content="Projects | Talha Mujahid">
-<meta property="og:description" content="Projects by Talha Mujahid | Software Engineer.">
-<meta property="og:url" content="https://htmujahid.github.io/projects.html">
-<meta property="og:image" content="https://htmujahid.github.io/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://htmujahid.github.io/og-image.png">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Talha Mujahid</title>
+  <meta name="description" content="All open source projects by Talha Mujahid: developer tools and libraries such as Shadcn Editor, SonnetJS, Rhythm and Raga, and applications such as Supasheet, Nocosheet, Slidx and Undocx.">
+  <meta name="author" content="Talha Mujahid">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://htmujahid.github.io/projects.html">
+  <link rel="stylesheet" href="style.css">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#09090b">
+
+  <!-- Icons -->
+  <link rel="icon" href="assets/favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Talha Mujahid">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Projects — Talha Mujahid">
+  <meta property="og:description" content="All open source projects by Talha Mujahid: developer tools and libraries such as Shadcn Editor, SonnetJS, Rhythm and Raga, and applications such as Supasheet, Nocosheet, Slidx and Undocx.">
+  <meta property="og:url" content="https://htmujahid.github.io/projects.html">
+  <meta property="og:image" content="https://htmujahid.github.io/assets/og.png">
+  <meta property="og:image:secure_url" content="https://htmujahid.github.io/assets/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Talha Mujahid, Full-stack Software Engineer. Building web applications with React, Node.js, NestJS and PostgreSQL.">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@htmujahid">
+  <meta name="twitter:creator" content="@htmujahid">
+  <meta name="twitter:title" content="Projects — Talha Mujahid">
+  <meta name="twitter:description" content="All open source projects by Talha Mujahid: developer tools and libraries such as Shadcn Editor, SonnetJS, Rhythm and Raga, and applications such as Supasheet, Nocosheet, Slidx and Undocx.">
+  <meta name="twitter:image" content="https://htmujahid.github.io/assets/og.png">
+  <meta name="twitter:image:alt" content="Talha Mujahid, Full-stack Software Engineer. Building web applications with React, Node.js, NestJS and PostgreSQL.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://htmujahid.github.io/projects.html#page",
+        "url": "https://htmujahid.github.io/projects.html",
+        "name": "Projects — Talha Mujahid",
+        "description": "All open source projects by Talha Mujahid.",
+        "isPartOf": { "@id": "https://htmujahid.github.io/#website" },
+        "author": { "@id": "https://htmujahid.github.io/#person" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://htmujahid.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://htmujahid.github.io/projects.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<main class="page projects-page">
-  <header class="site-header"><a class="wordmark" href="./" aria-label="Talha Mujahid home">tm<span>.</span></a><nav class="site-nav" aria-label="Main navigation"><a href="./">Home</a><a href="projects.html" aria-current="page">Work</a><a href="mailto:htmujahid@gmail.com">Get in touch ↗</a></nav></header>
-  <section class="projects-intro"><p class="eyebrow">The project archive</p><h1>Things I’ve built<span>.</span></h1><p>Experiments, open-source tools, and ideas brought to life.</p></section>
-  <div class="filters" id="filters"><label for="q">All projects <span id="count" aria-live="polite"></span></label><input id="q" type="search" placeholder="Search projects…" autocomplete="off"></div>
-  <ul class="list" id="list"></ul>
-  <p class="empty" id="empty">No projects match your search.</p>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-  <footer class="site-footer"><a href="./">← Back to home</a><span>Talha Mujahid / Software Engineer</span></footer>
-</main>
-<script>
-const $=s=>document.querySelector(s);
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const fmt=n=>n>=1000?(n/1000).toFixed(1).replace(".0","")+"k":String(n);
-let P=[],loaded=false;
-const thumb=p=>`<img src="thumbs/${p.thumb}.png" width="1280" height="800" alt="${esc(p.name)} illustration" loading="lazy">`;
-function render(){
-  const q=$("#q").value.toLowerCase();
-  const l=P.filter(p=>(p.name+(p.desc||"")+(p.lang||"")).toLowerCase().includes(q));
-  $("#count").textContent=loaded?`(${l.length})`:"";
-  $("#empty").style.display=loaded&&!l.length?"block":"none";
-  $("#list").innerHTML=l.map(p=>`<li class="item">
-    <a class="thumb" href="${p.site||`https://github.com/${p.repo}`}" target="_blank" rel="noopener" tabindex="-1">${thumb(p)}</a>
-    <div>
-      <div class="row1"><a class="name" href="https://github.com/${p.repo}" target="_blank" rel="noopener">${esc(p.name)}</a>${p.stars?`<span class="stars">&#9733; ${fmt(p.stars)}</span>`:""}</div>
-      ${p.desc?`<p class="desc">${esc(p.desc)}</p>`:""}
-      <div class="meta">${p.lang?`<span>${esc(p.lang)}</span>`:""}${p.note?`<span>${esc(p.note)}</span>`:""}${p.site?`<a href="${p.site}" target="_blank" rel="noopener">live &rarr;</a>`:""}<a href="https://github.com/${p.repo}" target="_blank" rel="noopener">source &rarr;</a></div>
-    </div></li>`).join("");
-}
-// projects.live.json is generated at deploy time (scripts/build-projects.mjs) with fresh GitHub
-// data; projects.json is the plain list it is built from, used if the live file is missing.
-async function load(){
-  for(const f of ["projects.live.json","projects.json"]){
-    try{const r=await fetch(f);if(r.ok){P=(await r.json()).map(p=>({...p,name:p.note?p.repo:p.repo.split("/").pop()}));break}}catch(e){}
-  }
-  loaded=true;render();
-}
-$("#q").oninput=render;
-load();
-</script>
+  <header id="top" class="site-header">
+    <p class="name"><a href="index.html">Talha Mujahid</a></p>
+    <p class="tagline">Full-stack Software Engineer</p>
+
+    <address class="contact">
+      <ul class="contact-list">
+        <li class="contact-item contact-email"><a href="mailto:htmujahid@gmail.com">htmujahid@gmail.com</a></li>
+        <li class="contact-item contact-linkedin"><a href="https://www.linkedin.com/in/htmujahid/" rel="me">linkedin.com/in/htmujahid</a></li>
+        <li class="contact-item contact-github"><a href="https://github.com/htmujahid" rel="me">github.com/htmujahid</a></li>
+        <li class="contact-item contact-x"><a href="https://x.com/htmujahid" rel="me">x.com/htmujahid</a></li>
+      </ul>
+    </address>
+
+    <nav class="site-nav" aria-label="Site">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="#developer-tools">Developer Tools &amp; Libraries</a></li>
+        <li class="nav-item"><a href="#applications">Applications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content" class="site-main">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Projects</li>
+      </ol>
+    </nav>
+
+    <h1 class="page-title">Projects</h1>
+    <p class="section-intro">Sixteen public projects, grouped by what they are. Every one is open source; each entry links to its repository and, where there is one, the live site, docs or package.</p>
+
+    <section id="developer-tools" class="section section-projects" aria-labelledby="developer-tools-heading">
+      <h2 id="developer-tools-heading" class="section-heading">Developer Tools &amp; Libraries</h2>
+      <article class="project" id="project-shadcn-editor">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/shadcn-editor">Shadcn Editor</a></h3>
+        <p class="project-description">Rich text editor built on Lexical from shadcn/ui components, installed from the shadcn registry. 1.4K+ GitHub stars.</p>
+        <ul class="project-stack" aria-label="Stack"><li>React</li><li>Lexical</li><li>shadcn/ui</li><li>Tailwind CSS</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/shadcn-editor">github.com/htmujahid/shadcn-editor</a></li>
+          <li><a class="link-live" href="https://shadcn-editor.vercel.app">shadcn-editor.vercel.app</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-sonnet">
+        <h3 class="project-title"><a href="https://github.com/sonnetjs/sonnet">SonnetJS</a></h3>
+        <p class="project-description">Zero-dependency, zero-build frontend framework for crafting web UI with classic scripts; no bundler, no virtual DOM.</p>
+        <ul class="project-stack" aria-label="Stack"><li>JavaScript</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/sonnetjs/sonnet">github.com/sonnetjs/sonnet</a></li>
+          <li><a class="link-live" href="https://sonnet.js.org">sonnet.js.org</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-project-structure-skills">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/project-structure-skills">Project Structure Skills</a></h3>
+        <p class="project-description">Agent skills that teach project layout per framework: React, Next.js, TanStack, NestJS and Django.</p>
+        <ul class="project-stack" aria-label="Stack"><li>Agent skills</li><li>Markdown</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/project-structure-skills">github.com/htmujahid/project-structure-skills</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-rhythm">
+        <h3 class="project-title"><a href="https://github.com/rhythmjs/rhythm">Rhythm</a></h3>
+        <p class="project-description">Type-safe, modular backend framework built exclusively for Bun: encapsulated modules, compile-time checked context, router and CLI packages.</p>
+        <ul class="project-stack" aria-label="Stack"><li>TypeScript</li><li>Bun</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/rhythmjs/rhythm">github.com/rhythmjs/rhythm</a></li>
+          <li><a class="link-live" href="https://rhythm.js.org">rhythm.js.org</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-raga">
+        <h3 class="project-title"><a href="https://github.com/raga-lang/raga">Raga</a></h3>
+        <p class="project-description">Small, explicit programming language where every construct is one binding shape, with a dependency-free compiler and a VS Code extension.</p>
+        <ul class="project-stack" aria-label="Stack"><li>Rust</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/raga-lang/raga">github.com/raga-lang/raga</a></li>
+          <li><a class="link-live" href="https://raga-lang.github.io">raga-lang.github.io</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-postgrex">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/postgrex">Postgrex</a></h3>
+        <p class="project-description">Local PostgreSQL GUI in the browser for browsing schemas, running queries and managing a cluster. Starts with <code>npx usepostgrex</code>.</p>
+        <ul class="project-stack" aria-label="Stack"><li>Node.js</li><li>Express</li><li>React</li><li>Vite</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/postgrex">github.com/htmujahid/postgrex</a></li>
+          <li><a class="link-live" href="https://www.npmjs.com/package/usepostgrex">npmjs.com/package/usepostgrex</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-shadcn-data-grid">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/shadcn-data-grid">Shadcn Data Grid</a></h3>
+        <p class="project-description">Spreadsheet-style data grid editor built with shadcn/ui and distributed as a shadcn registry.</p>
+        <ul class="project-stack" aria-label="Stack"><li>React</li><li>shadcn/ui</li><li>Vite</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/shadcn-data-grid">github.com/htmujahid/shadcn-data-grid</a></li>
+          <li><a class="link-live" href="https://htmujahid.github.io/shadcn-data-grid/">htmujahid.github.io/shadcn-data-grid</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-barebone-reactivity">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/barebone-reactivity">Barebone Reactivity</a></h3>
+        <p class="project-description">State and signal based reactivity implemented in vanilla JavaScript.</p>
+        <ul class="project-stack" aria-label="Stack"><li>TypeScript</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/barebone-reactivity">github.com/htmujahid/barebone-reactivity</a></li>
+          <li><a class="link-live" href="https://htmujahid.github.io/barebone-reactivity">htmujahid.github.io/barebone-reactivity</a></li>
+        </ul>
+      </article>
+    </section>
+    <hr>
+
+    <section id="applications" class="section section-projects" aria-labelledby="applications-heading">
+      <h2 id="applications-heading" class="section-heading">Applications</h2>
+      <article class="project" id="project-supasheet">
+        <h3 class="project-title"><a href="https://github.com/supasheet/supasheet">Supasheet</a></h3>
+        <p class="project-description">Turns any Supabase project into an ERP, CRM or admin platform driven by its Postgres schema, with RBAC enforced by Row Level Security.</p>
+        <ul class="project-stack" aria-label="Stack"><li>React</li><li>TanStack</li><li>Supabase</li><li>PostgreSQL</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/supasheet/supasheet">github.com/supasheet/supasheet</a></li>
+          <li><a class="link-live" href="https://supasheet.app">supasheet.app</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-slidx">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/slidx">Slidx</a></h3>
+        <p class="project-description">Design, animate and present slides in the browser, with a timeline engine and an AI assistant that proposes reviewable edits.</p>
+        <ul class="project-stack" aria-label="Stack"><li>Next.js</li><li>TypeScript</li><li>Convex</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/slidx">github.com/htmujahid/slidx</a></li>
+          <li><a class="link-live" href="https://slidx.vercel.app">slidx.vercel.app</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-undocx">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/undocx">Undocx</a></h3>
+        <p class="project-description">AI-assisted, collaborative knowledge base with semantic search over pgvector and multi-tenant workspaces.</p>
+        <ul class="project-stack" aria-label="Stack"><li>Next.js</li><li>Lexical</li><li>pgvector</li><li>Vercel AI SDK</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/undocx">github.com/htmujahid/undocx</a></li>
+          <li><a class="link-live" href="https://undocx.com">undocx.com</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-nocosheet">
+        <h3 class="project-title"><a href="https://github.com/nocosheet/nocosheet">Nocosheet</a></h3>
+        <p class="project-description">Open-source, offline-first no-code database with a spreadsheet-style grid, self-hosted on Cloudflare, one deployment per team.</p>
+        <ul class="project-stack" aria-label="Stack"><li>React</li><li>TanStack</li><li>Cloudflare Workers</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/nocosheet/nocosheet">github.com/nocosheet/nocosheet</a></li>
+          <li><a class="link-live" href="https://nocosheet.github.io/">nocosheet.github.io</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-notifro">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/notifro">Notifro</a></h3>
+        <p class="project-description">Self-hostable notification infrastructure on Cloudflare: compose once, deliver across ten channels, with a native MCP server for AI agents.</p>
+        <ul class="project-stack" aria-label="Stack"><li>Cloudflare Workers</li><li>React</li><li>MCP</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/notifro">github.com/htmujahid/notifro</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-adatnama">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/adatnama">Adatnama</a></h3>
+        <p class="project-description">Local-first habit tracker with streak freezes, shared circles and push reminders.</p>
+        <ul class="project-stack" aria-label="Stack"><li>TanStack Start</li><li>TanStack DB</li><li>Cloudflare Workers</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/adatnama">github.com/htmujahid/adatnama</a></li>
+          <li><a class="link-live" href="https://adatnama.com">adatnama.com</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-cleanough">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/cleanough">Cleanough</a></h3>
+        <p class="project-description">Turns any GitHub repository into an interactive presentation: browse code, step through commits, showcase outputs.</p>
+        <ul class="project-stack" aria-label="Stack"><li>TanStack Start</li><li>Monaco Editor</li><li>Chakra UI</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/cleanough">github.com/htmujahid/cleanough</a></li>
+          <li><a class="link-live" href="https://cleanough.netlify.app/">cleanough.netlify.app</a></li>
+        </ul>
+      </article>
+      <article class="project" id="project-viewust">
+        <h3 class="project-title"><a href="https://github.com/htmujahid/viewust">Viewust</a></h3>
+        <p class="project-description">Linux desktop app that maps everything connected to and inside your computer, live.</p>
+        <ul class="project-stack" aria-label="Stack"><li>Rust</li><li>Tauri</li><li>SvelteKit</li></ul>
+        <ul class="project-links" aria-label="Links">
+          <li><a class="link-repo" href="https://github.com/htmujahid/viewust">github.com/htmujahid/viewust</a></li>
+          <li><a class="link-live" href="https://github.com/htmujahid/viewust/releases">github.com/htmujahid/viewust/releases</a></li>
+        </ul>
+      </article>
+    </section>
+    <hr>
+
+    <p class="section-actions">
+      <a class="button" href="index.html"><span aria-hidden="true">←</span> Back to home</a>
+    </p>
+
+  </main>
+
+  <footer class="site-footer">
+    <p><small>© <time datetime="2026">2026</time> Talha Mujahid</small></p>
+  </footer>
+
 </body>
 </html>
